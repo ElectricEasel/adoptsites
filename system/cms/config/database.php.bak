@@ -34,8 +34,8 @@
 $db[PYRO_DEVELOPMENT] = array(
 	'hostname'		=> 	'localhost',
 	'username'		=> 	'root',
-	'password'		=> 	'',
-	'database'		=> 	'pyrocms',
+	'password'		=> 	'root',
+	'database'		=> 	'pyro',
 	'dbdriver' 		=> 	'mysql',
 	'dbprefix' 		=>	'',
 	'active_r' 		=>	true,
@@ -70,9 +70,9 @@ $db[PYRO_STAGING] = array(
 // Production
 $db[PYRO_PRODUCTION] = array(
 	'hostname'		=> 	'localhost',
-	'username'		=> 	'root',
-	'password'		=> 	'',
-	'database'		=> 	'pyrocms',
+	'username'		=> 	'don',
+	'password'		=> 	'electric12',
+	'database'		=> 	'pyro',
 	'dbdriver' 		=> 	'mysql',
 	'pconnect' 		=>	false,
 	'db_debug' 		=>	false,
