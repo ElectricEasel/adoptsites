@@ -163,7 +163,7 @@ class Create extends Sites_Controller
 	/**
 	 * Create the database records and all folders for a new site
 	 */
-	public function create()
+	public function newsite()
 	{
 		$data = new stdClass();
 
