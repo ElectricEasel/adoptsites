@@ -17,8 +17,7 @@
 	#RewriteCond %{SERVER_NAME} ^stage.domain.com
 	#RewriteRule .* - [E=PYRO_ENV:staging]
 
-	RewriteCond %{SERVER_NAME} ^adoptsite.aws$ [OR]
-	RewriteCond %{SERVER_NAME} ^adoptsite.com$
+	RewriteCond %{SERVER_NAME} ^(.*)?\.?adoptsite.com$
 	RewriteRule .* - [E=PYRO_ENV:production]
 
 	# NOTICE: If you get a 404 play with combinations of the following commented out lines
