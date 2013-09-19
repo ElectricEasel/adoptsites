@@ -54,7 +54,10 @@
 			<?php file_partial('header'); ?>
 			</header>
 
-			<div id="content-body">
+			<div class="one_quarter">
+				<?php file_partial('navigation') ?>
+			</div>
+			<div id="content-body" class="three_quarter">
 				<?php file_partial('notices'); ?>
 				<?php echo $template['body']; ?>
 			</div>
@@ -65,19 +68,7 @@
 
 	<footer class="clearfix">
 		<div class="wrapper">
-			<p class="credits">Copyright &copy;<?php echo date('Y'); ?> PyroCMS LLC &nbsp; <span>Version <?php echo CMS_VERSION.' '.CMS_EDITION; ?> &nbsp; Rendered in {elapsed_time} sec. using {memory_usage}.</span></p>
-
-			<ul id="lang">
-				<form action="<?php echo current_url(); ?>" id="change_language" method="get">
-					<select class="chzn" name="lang" onchange="this.form.submit();">
-						<?php foreach(config_item('supported_languages') as $key => $lang): ?>
-							<option value="<?php echo $key; ?>" <?php echo CURRENT_LANGUAGE == $key ? ' selected="selected" ' : ''; ?>>
-								 <?php echo $lang['name']; ?>
-							</option>
-						<?php endforeach; ?>
-					</select>
-				</form>
-			</ul>
+			<p class="credits">Copyright &copy;<?php echo date('Y'); ?> AdoptSites</p>
 		</div>
 	</footer>
 

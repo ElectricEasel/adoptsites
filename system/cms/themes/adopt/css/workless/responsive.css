@@ -14,7 +14,7 @@
  * ---------------------------------- */
 
 .topbar {
-  height: 50px;
+  height: 88px;
 }
 
 .topbar ul li a {
@@ -378,9 +378,6 @@ button#login-submit:hover {
   #logo {
     display: none;
   }
-  .topbar {
-    height: 50px;
-  }
   .topbar ul {
     padding-left: 0!important;
     margin-left: -15px;
@@ -628,9 +625,6 @@ button#login-submit:hover {
   #logo {
     display: inherit;
   }
-  .topbar {
-    height: 50px;
-  }
   .topbar ul li a {
     padding: 16px 7px;
   }
@@ -766,7 +760,6 @@ button#login-submit:hover {
     margin: 0 auto;
   }
   .topbar {
-    height: 50px;
     text-align: center;
   }
   .subbar {
@@ -849,7 +842,6 @@ button#login-submit:hover {
     margin: 0 auto;
   }
   .topbar {
-    height: 50px;
     text-align: center;
   }
   .subbar {

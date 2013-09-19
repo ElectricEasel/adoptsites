@@ -176,12 +176,12 @@ button#remove_installer_directory:hover {
 
 .subbar {
   position: absolute;
-  top: 27px!important;
+  top: 64px!important;
   right: 0;
   left: 0;
   z-index: 9997;
   height: 20px;
-  padding: 10px;
+  padding: 5px;
   margin-top: 15px;
   background: #333;
   border-top: 1px solid #4c4c4c;
@@ -225,7 +225,7 @@ button#remove_installer_directory:hover {
   display: inline-block;
   padding: 0;
   margin: 0;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 21px;
   color: #fff;
   text-shadow: 0 1px 1px #000;
@@ -763,17 +763,11 @@ section.title {
   display: block;
   width: 100%;
   min-height: 25px;
-  padding: 13px 0 8px;
+  padding: 8px 0;
   margin-top: 0;
   margin-bottom: 0;
   background: #f7f7f7;
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#f7f7f7), to(#f3f3f3));
-  background-image: -moz-linear-gradient(#f7f7f7, #f3f3f3);
-  background-image: -ms-linear-gradient(#f7f7f7, #f3f3f3);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f7f7f7), color-stop(100%, #f3f3f3));
-  background-image: -webkit-linear-gradient(#f7f7f7, #f3f3f3);
-  background-image: -o-linear-gradient(#f7f7f7, #f3f3f3);
-  background-image: linear-gradient(#f7f7f7, #f3f3f3);
+  background-image: url(../../img/nav-bg.png);
   background-repeat: repeat-x;
   border-bottom: 1px solid #f0f0f0;
   -webkit-border-radius: 5px 5px 0 0;
@@ -793,9 +787,8 @@ section.title h4 {
   padding: 0 16px;
   margin: 0;
   font-size: 16px;
-  color: #555;
+  color: #FFF;
   text-align: left;
-  text-shadow: 1px 1px 0 #fff;
 }
 
 section.title h4 a {
@@ -828,7 +821,7 @@ section.item {
   min-height: 100px;
   padding: 0;
   margin: 0;
-  background: #fff;
+  background: #F9F9F9;
   -webkit-border-bottom-right-radius: 5px;
      -moz-border-bottom-right-radius: 5px;
        -o-border-bottom-right-radius: 5px;
@@ -838,11 +831,11 @@ section.item {
        -o-border-bottom-left-radius: 5px;
           border-bottom-left-radius: 5px;
   zoom: 1;
-  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-     -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-      -ms-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-       -o-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
+     -moz-box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
+      -ms-box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
+       -o-box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
+          box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
 }
 
 section.item > .content {
@@ -1119,4 +1112,30 @@ table > tbody > tr {
   font-size: 11px;
   color: #5D7F88;
   background: #E3ECEE;
+}
+
+
+
+
+.primary-nav {
+    background:#f9f9f9;
+}
+.primary-nav li {
+    padding:15px;
+    background:#f9f9f9;
+    font-size:14px;
+    -webkit-box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
+    -moz-box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
+    -ms-box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
+    -o-box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
+    box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
+}
+.primary-nav li:hover {
+    background-color:#84d4fa;
+}
+.primary-nav li a {
+    color:#3c3c3c;
+}
+.primary-nav li:hover > a {
+    color:#fff;
 }

@@ -1,6 +1,6 @@
 <ul class="primary-nav">
 	
-	<li id="dashboard-link"><?php echo anchor('admin', lang('global:dashboard'), 'class="top-link '.( ! $this->module ? 'current ' : '').'"') ?></li>
+	<li><?php echo anchor('admin', lang('global:dashboard'), 'class="top-link '.( ! $this->module ? 'current ' : '').'"') ?></li>
 
 		<?php 
 

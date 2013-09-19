@@ -1,87 +1,41 @@
+<!-- Begin Quick Links -->
+<section id="quick_links" class="<?php echo isset($rss_items) ?>">
+	<div class="">
+		<ul>
+			<?php if((array_key_exists('comments', $this->permissions) OR $this->current_user->group == 'admin') AND module_enabled('comments')): ?>
+				<li>
+					<a class="tooltip-s" title="<?php echo lang('cp:manage_comments') ?>" href="<?php echo site_url('admin/comments') ?>"><?php echo Asset::img('icons/comments.png', lang('cp:manage_comments')) ?></a>
+				</li>
+			<?php endif ?>
+
+			<?php if((array_key_exists('pages', $this->permissions) OR $this->current_user->group == 'admin') AND module_enabled('pages')): ?>
+				<li>
+					<a class="tooltip-s" title="<?php echo lang('cp:manage_pages') ?>" href="<?php echo site_url('admin/pages') ?>"><?php echo Asset::img('icons/pages.png', lang('cp:manage_pages')) ?></a>
+				</li>
+			<?php endif ?>
+
+			<?php if((array_key_exists('files', $this->permissions) OR $this->current_user->group == 'admin') AND module_enabled('files')): ?>
+				<li>
+					<a class="tooltip-s" title="<?php echo lang('cp:manage_files') ?>" href="<?php echo site_url('admin/files') ?>"><?php echo Asset::img('icons/files.png', lang('cp:manage_files')) ?></a>
+				</li>
+			<?php endif ?>
+
+			<?php if(array_key_exists('users', $this->permissions) OR $this->current_user->group == 'admin'): ?>
+				<li>
+					<a class="tooltip-s" title="<?php echo lang('cp:manage_users') ?>" href="<?php echo site_url('admin/users') ?>"><?php echo Asset::img('icons/users.png', lang('cp:manage_users')) ?></a>
+				</li>
+			<?php endif ?>
+		</ul>
+	</div>
+</section>
+<!-- End Quick Links -->
+
 <!-- Add an extra div to allow the elements within it to be sortable! -->
-<div id="sortable">
+<div>
 
 	<!-- Dashboard Widgets -->
 	{{ widgets:area slug="dashboard" }}
-	
-	<!-- Begin Quick Links -->
-	<?php if ($theme_options->pyrocms_quick_links == 'yes') : ?>
-	<div class="one_full">
-		
-		<section class="draggable title">
-			<h4><?php echo lang('cp:admin_quick_links') ?></h4>
-			<a class="tooltip-s toggle" title="Toggle this element"></a>
-		</section>
-		
-		<section id="quick_links" class="item <?php echo isset($rss_items) ?>">
-			<div class="content">
-				<ul>
-					<?php if((array_key_exists('comments', $this->permissions) OR $this->current_user->group == 'admin') AND module_enabled('comments')): ?>
-					<li>
-						<a class="tooltip-s" title="<?php echo lang('cp:manage_comments') ?>" href="<?php echo site_url('admin/comments') ?>"><?php echo Asset::img('icons/comments.png', lang('cp:manage_comments')) ?></a>
-					</li>
-					<?php endif ?>
-					
-					<?php if((array_key_exists('pages', $this->permissions) OR $this->current_user->group == 'admin') AND module_enabled('pages')): ?>
-					<li>
-						<a class="tooltip-s" title="<?php echo lang('cp:manage_pages') ?>" href="<?php echo site_url('admin/pages') ?>"><?php echo Asset::img('icons/pages.png', lang('cp:manage_pages')) ?></a>
-					</li>
-					<?php endif ?>
-					
-					<?php if((array_key_exists('files', $this->permissions) OR $this->current_user->group == 'admin') AND module_enabled('files')): ?>
-					<li>
-						<a class="tooltip-s" title="<?php echo lang('cp:manage_files') ?>" href="<?php echo site_url('admin/files') ?>"><?php echo Asset::img('icons/files.png', lang('cp:manage_files')) ?></a>
-					</li>
-					<?php endif ?>
-					
-					<?php if(array_key_exists('users', $this->permissions) OR $this->current_user->group == 'admin'): ?>
-					<li>
-						<a class="tooltip-s" title="<?php echo lang('cp:manage_users') ?>" href="<?php echo site_url('admin/users') ?>"><?php echo Asset::img('icons/users.png', lang('cp:manage_users')) ?></a>
-					</li>
-					<?php endif ?>
-				</ul>
-			</div>
-		</section>
 
-	</div>	
-	<?php endif ?>
-	<!-- End Quick Links -->
-
-	<!-- Begin Recent Comments -->
-	<?php if (isset($recent_comments) AND is_array($recent_comments) AND $theme_options->pyrocms_recent_comments == 'yes') : ?>
-	<div class="one_full">
-		
-		<section class="draggable title">
-			<h4><?php echo lang('comments:recent_comments') ?></h4>
-			<a class="tooltip-s toggle" title="Toggle this element"></a>
-		</section>
-		
-		<section class="item">
-			<div class="content">
-				<ul id="widget-comments">
-
-					<?php if (count($recent_comments)): ?>
-						<?php foreach ($recent_comments as $comment): ?>
-							<li>
-								<div class="comments-gravatar"><?php echo gravatar($comment->user_email) ?></div>
-								<div class="comments-date"><?php echo format_date($comment->created_on) ?></div>
-								<p>
-									<?php echo sprintf(lang('comments:list_comment'), $comment->user_name, $comment->entry_title) ?> 
-									<span><?php echo (Settings::get('comment_markdown') AND $comment->parsed > '') ? strip_tags($comment->parsed) : $comment->comment ?></span>
-								</p>
-							</li>
-						<?php endforeach ?>
-					<?php else: ?>
-						<?php echo lang('comments:no_comments') ?>
-					<?php endif ?>
-				</ul>
-			</div>
-		</section>
-
-	</div>		
-	<?php endif ?>
-	<!-- End Recent Comments -->
-		
 	
 	<?php if ((isset($analytic_visits) OR isset($analytic_views)) AND $theme_options->pyrocms_analytics_graph == 'yes'): ?>
 	<script type="text/javascript">
@@ -154,7 +108,7 @@
 		
 		});
 	</script>
-	<div class="one_full">
+	<div class="one_half">
 		<section class="title">
 			<h4>Statistics</h4>
 		</section>	
@@ -170,11 +124,10 @@
 
 	<!-- Begin RSS Feed -->
 	<?php if ( isset($rss_items) AND $theme_options->pyrocms_news_feed == 'yes') : ?>
-	<div id="feed" class="one_full">
+	<div id="feed" class="one_half">
 		
-		<section class="draggable title">
+		<section class="title">
 			<h4><?php echo lang('cp:news_feed_title') ?></h4>
-			<a class="tooltip-s toggle" title="Toggle this element"></a>
 		</section>
 		
 		<section class="item">
@@ -201,8 +154,6 @@
 						</div>
 						<div class="post">
 							<h4><?php echo anchor($rss_item->get_permalink(), $rss_item->get_title(), 'target="_blank"') ?></h4>
-													
-							<p class='item_body'><?php echo $rss_item->get_description() ?></p>
 						</div>
 					</li>
 					<?php endforeach ?>
