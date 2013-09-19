@@ -214,7 +214,8 @@ class Create extends Sites_Controller
 				{
 					// All good...
 					$this->session->set_flashdata('success', lang('site:create_success'));
-					redirect('sites');
+					$domain = $this->input->post('domain');
+					redirect('http://' . $domain . '/admin/login');
 				}
 				// There must be folders that aren't writeable
 				elseif (is_array($message))

@@ -102,6 +102,12 @@ class Sites_m extends MY_Model {
 					{
 						return $this->module_import->import_all();
 					}
+
+					// Change default admin theme
+					$this->db
+						->set('value', 'adopt')
+				        ->where('slug', 'admin_theme')
+				        ->update('settings');
 				}
 			}
 		}
