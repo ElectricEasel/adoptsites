@@ -100,14 +100,16 @@ class Sites_m extends MY_Model {
 
 					if ($this->db->insert('migrations', array('version' => config_item('migration_version'))) )
 					{
-						return $this->module_import->import_all();
-					}
+						$success = $this->module_import->import_all();
 
-					// Change default admin theme
-					$this->db
-						->set('value', 'adopt')
-				        ->where('slug', 'admin_theme')
-				        ->update('settings');
+						// Change default admin theme
+						$this->db
+							->set('value', 'adopt')
+							->where('slug', 'admin_theme')
+							->update('settings');
+
+						return $success;
+					}
 				}
 			}
 		}

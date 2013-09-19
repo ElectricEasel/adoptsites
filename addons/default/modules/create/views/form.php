@@ -56,7 +56,7 @@
 		</ol>
 
 	<div class="buttons align-right padding-top">
-		<?php //$this->load->view('admin/partials/buttons', array('buttons' => array('save', 'cancel') )); ?>
+		<button class="btn btn-primary" type="button">Submit</button>
 	</div>
 
 <?php echo form_close(); ?>
