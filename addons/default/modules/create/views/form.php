@@ -56,7 +56,7 @@
 		</ol>
 
 	<div class="buttons align-right padding-top">
-		<button class="btn btn-primary" type="button">Submit</button>
+		<button class="btn btn-primary" type="submit">Submit</button>
 	</div>
 
 <?php echo form_close(); ?>
