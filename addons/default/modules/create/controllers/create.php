@@ -74,6 +74,7 @@ class Create extends Sites_Controller
 		$this->template
 			->append_css('theme::common.css')
 			->append_js('jquery/jquery.cooki.js')
+			->append_js('jquery/jquery.validate.min.js')
 			->append_js('module.js')
 			->enable_parser(false)
 			->set_theme(ADMIN_THEME)
@@ -223,10 +224,11 @@ class Create extends Sites_Controller
 		}
 	}
 
+	// Return true if the domain is not found.
 	protected function ajaxCheckDomainAvailability()
 	{
 		$found = $this->sites_m->get_by('domain', $this->input->get('domain'));
-		return array('exists' => !is_null($found));
+		return is_null($found);
 	}
 
 	public function _valid_domain($url)

@@ -4,7 +4,7 @@
 <h3><?php echo sprintf(lang('site:edit_site'), $name); ?></h3>
 <?php endif; ?>
 
-<?php echo form_open(uri_string(), 'class="crud"'); ?>
+<?php echo form_open(uri_string(), 'class="crud stripe-form"'); ?>
 
 	<ol class="user">
 		<h4><?php echo lang('site:first_admin'); ?></h4>
@@ -42,8 +42,47 @@
 		</li>
 	</ol>
 
+	<ol class="site">
+		<h4>Payment Info</h4>
+		<li class="<?php echo alternator('even', ''); ?>">
+			<label>Card Number</label>
+			<input type="text" maxlength="20" autocomplete="off" class="card-number stripe-sensitive required" />
+		</li>
+
+		<li class="<?php echo alternator('even', ''); ?>">
+			<label>CVC</label>
+			<input type="text" maxlength="4" autocomplete="off" class="card-cvc stripe-sensitive required" />
+		</li>
+
+		<li class="<?php echo alternator('even', ''); ?>">
+			<label>Expiration</label>
+			<div class="expiry-wrapper">
+				<select class="card-expiry-month stripe-sensitive required">
+				</select>
+				<script type="text/javascript">
+					var select = $(".card-expiry-month"),
+						month = new Date().getMonth() + 1;
+					for (var i = 1; i <= 12; i++) {
+						select.append($("<option value='"+i+"' "+(month === i ? "selected" : "")+">"+i+"</option>"))
+					}
+				</script>
+				<span> / </span>
+				<select class="card-expiry-year stripe-sensitive required"></select>
+				<script type="text/javascript">
+					var select = $(".card-expiry-year"),
+						year = new Date().getFullYear();
+
+					for (var i = 0; i < 12; i++) {
+						select.append($("<option value='"+(i + year)+"' "+(i === 0 ? "selected" : "")+">"+(i + year)+"</option>"))
+					}
+				</script>
+			</div>
+		</li>
+	</ol>
+
 	<div class="buttons align-right padding-top">
-		<button class="btn btn-primary" type="submit">Submit</button>
+		<span class="payment-errors"></span>
+		<button class="btn btn-primary" name="submit-button" type="submit">Submit</button>
 	</div>
 
 <?php echo form_close(); ?>

@@ -41,5 +41,5 @@
 	echo Asset::render();
 
 ?>
-
+<script type="text/javascript" src="https://js.stripe.com/v1/"></script>
 <?php echo $template['metadata']; ?>
