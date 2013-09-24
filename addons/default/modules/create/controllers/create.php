@@ -19,12 +19,7 @@ class Create extends Sites_Controller
 
 		// If using a URL not defined as a site, set this to stop the world ending
 		defined('SITE_REF') or define('SITE_REF', 'core');
-
-		// make sure they've ran the installer before trying to view our shiny panel
-		$this->db->table_exists('sites') or redirect('installer');
-
 		defined('ADMIN_THEME') or define('ADMIN_THEME', 'create');
-
 		defined('MSMPATH') or redirect('404');
 
 		// define folders that we need to create for each new site
@@ -79,13 +74,13 @@ class Create extends Sites_Controller
 		$this->template
 			->append_css('theme::common.css')
 			->append_js('jquery/jquery.cooki.js')
+			->append_js('module.js')
 			->enable_parser(false)
-			->set('super_username', $this->session->userdata('super_username'))
 			->set_theme(ADMIN_THEME)
 			->set_layout('default', 'admin');
 
 		// Set the validation rules
-		$val_rules = array(
+		$this->site_validation_rules = array(
 			array(
 				  'field' => 'id',
 			),
@@ -93,24 +88,9 @@ class Create extends Sites_Controller
 				'field'	=>	'user_id',
 			),
 			array(
-				'field' => 'name',
-				'label' => 'lang:site.descriptive_name',
-				'rules' => 'trim|max_length[100]|required'
-			),
-			array(
 				'field' => 'domain',
 				'label' => 'lang:site.domain',
 				'rules' => 'trim|callback__valid_domain|max_length[100]|required'
-			),
-			array(
-				'field' => 'ref',
-				'label' => 'lang:site.ref',
-				'rules' => 'trim|alpha_dash|callback__underscore|min_length[1]|max_length[20]|required'
-			),
-			array(
-				'field' => 'username',
-				'label'	=> 'lang:user_username',
-				'rules'	=> 'trim|required'
 			),
 			array(
 				'field' => 'first_name',
@@ -126,26 +106,13 @@ class Create extends Sites_Controller
 				'field' => 'email',
 				'label'	=> 'lang:user_email',
 				'rules'	=> 'trim|required|valid_email'
-			)
-		);
-
-		$val_create = array(
+			),
 			array(
 				'field' => 'password',
 				'label'	=> 'lang:user_password',
 				'rules'	=> 'trim|min_length[6]|required'
 			)
 		);
-
-		$val_edit = array(
-			array(
-				'field' => 'password',
-				'label'	=> 'lang:user_password',
-				'rules'	=> 'trim'
-			)
-		);
-
-		$this->site_validation_rules = array_merge($val_rules, ($this->method == 'create') ? $val_create : $val_edit);
 	}
 
 	/**
@@ -160,7 +127,7 @@ class Create extends Sites_Controller
 
 		if ($this->form_validation->run())
 		{
-			$ref = $this->input->post('ref');
+			$ref = substr(md5($this->input->post('domain')), 0, 20);
 
 			$this->load->config('migration');
 			$this->load->library('module_import', $ref);
@@ -168,7 +135,6 @@ class Create extends Sites_Controller
 			// make sure there aren't orphaned folders from a previous install
 			foreach ($this->locations AS $folder_check => $sub_folders)
 			{
-
 				if (is_dir($folder_check.'/'.$ref))
 				{
 					$data->messages['error'] = sprintf(lang('site:folder_exists'), $folder_check.'/'.$ref);
@@ -241,6 +207,26 @@ class Create extends Sites_Controller
 			->title(lang('site:sites'), lang('site:create_site'))
 			->set('description', lang('site:create_site_desc'))
 			->build('form', $data);
+	}
+
+	public function ajax($method)
+	{
+		$method = 'ajax' . $method;
+
+		if (method_exists($this, $method))
+		{
+			exit(json_encode($this->$method()));
+		}
+		else
+		{
+			exit('404');
+		}
+	}
+
+	protected function ajaxCheckDomainAvailability()
+	{
+		$found = $this->sites_m->get_by('domain', $this->input->get('domain'));
+		return array('exists' => !is_null($found));
 	}
 
 	public function _valid_domain($url)

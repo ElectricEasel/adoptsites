@@ -69,13 +69,15 @@ class Sites_m extends MY_Model {
 
 		$hash = $this->user_m->_hash_password($input['password']);
 
-		$insert = array('name'		=>	$input['name'],
-						'ref'		=>	$input['ref'],
+		$name = $ref = $username = substr(md5($input['domain']), 0, 20);
+
+		$insert = array('name'		=>	$name,
+						'ref'		=>	$ref,
 						'domain' 	=> 	$input['domain'],
 						'created_on'=>	now()
 						);
 
-		$user = array('username'		=>	$input['username'],
+		$user = array('username'		=>	$username,
 					  'first_name'		=>	$input['first_name'],
 					  'last_name'		=>	$input['last_name'],
 					  'email'			=>	$input['email'],
