@@ -32,8 +32,6 @@ jQuery(document).ready(function ($) {
             exp_year: $('.card-expiry-year').val()
         }, function(status, response) {
 
-            console.log(response);
-
             if (response.error) {
                 // re-enable the submit button
                 $(form['submit-button']).removeAttr("disabled")
@@ -52,7 +50,7 @@ jQuery(document).ready(function ($) {
                 form.appendChild(input[0])
 
                 // and submit
-                // form.submit();
+                form.submit();
             }
         });
 

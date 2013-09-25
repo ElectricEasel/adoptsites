@@ -259,6 +259,15 @@ define('ENVIRONMENT', (isset($_SERVER['PYRO_ENV']) ? $_SERVER['PYRO_ENV'] : PYRO
  */
 
     define('PYRO_DEMO', (file_exists(FCPATH.'DEMO')));
+/*
+ * --------------------------------------------------------------------
+ * LOAD THE COMPOSER AUTOLOADER
+ * --------------------------------------------------------------------
+ *
+ * ...and it will take care of our classes
+ *
+ */
+require_once FCPATH.'vendor/autoload.php';
 
 /*
  * --------------------------------------------------------------------

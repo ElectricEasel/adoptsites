@@ -74,7 +74,8 @@ class Sites_m extends MY_Model {
 		$insert = array('name'		=>	$name,
 						'ref'		=>	$ref,
 						'domain' 	=> 	$input['domain'],
-						'created_on'=>	now()
+						'created_on'=>	now(),
+						'stripe_customer_id' => $this->subscribe()
 						);
 
 		$user = array('username'		=>	$username,
@@ -116,6 +117,38 @@ class Sites_m extends MY_Model {
 			}
 		}
 		return false;
+	}
+
+	protected function subscribe($plan = 'as-basic')
+	{
+		// Let's make sure the stripe_customer_id field exists.
+		if ( ! $this->db->field_exists('stripe_customer_id', 'sites'))
+		{
+			$this->dbforge->add_column('sites', array(
+			                                          'stripe_customer_id' => array(
+				                                          'type' => 'VARCHAR',
+				                                          'constraint' => 20,
+				                                          'null' => true,
+			                                          ),
+			                                     ));
+		}
+
+		$this->load->config('stripe');
+
+		Stripe::setApiKey(config_item('stripe_private_key'));
+
+		$customer = Stripe_Customer::create(array(
+		                             'plan' => $plan,
+		                             'card' => $this->input->post('stripeToken'),
+		                             'email' => $this->input->post('email'),
+		                             'description' => $this->input->post('domain')
+		                        ));
+
+		if ($customer->id) {
+			return $customer->id;
+		}
+
+		return null;
 	}
 
 	/**
