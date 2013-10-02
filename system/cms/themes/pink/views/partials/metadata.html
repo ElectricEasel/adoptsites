@@ -1,0 +1,31 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="{{ url:base }}" />
+
+<!-- Begin stylesheets -->
+{{ asset:css file="template.css" }}
+<!-- End stylesheets -->
+
+<!-- Begin scripts -->
+{{ asset:js file="jquery183.min.js" }}
+{{ asset:js file="bootstrap.js" }}
+{{ asset:js file="jquery.fittext.js" }}
+<!-- End scripts -->
+
+<script type="text/javascript">
+    $( document ).ready(function() {
+        $(".facts h4 span").fitText(0.48);
+        $("#family-name").fitText(0.3, {maxFontSize: '32px'});
+
+        $(".fittext-xs").fitText(0.8, {maxFontSize: '26px'});
+        $(".fittext-sm").fitText(0.8, {maxFontSize: '34px'});
+        $(".fittext-med").fitText(0.8, {maxFontSize: '48px'});
+        $(".fittext-lg").fitText(0.8, {maxFontSize: '90px'});
+    });
+
+</script>
+
+{{ asset:render }}
+{{ template:metadata }}
+
+<title>{{ settings:site_name }}&nbsp;&bull;&nbsp;{{ template:title }}</title>

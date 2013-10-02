@@ -1,0 +1,44 @@
+<div id="content-wrapper">
+    {{ session:messages success="success-box" notice="notice-box" error="error-box" }}
+
+    {{ if page:is_home == true }}
+    <div id="profile-intro">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span7 main-pic">
+                    {{ theme:image file="main-profile-pic.jpg"}}
+                </div>
+                <div class="span5 family-info">
+                    <div class="name-callout">
+                        <h2>Hi! We're Liam &amp; Julie.</h2>
+                    </div>
+                    <a class="button button-green" href="#">Send Us A Message</a>
+                    <div class="contact-info">
+                        <span><strong>Call or text:</strong> 1-888-123-4567</span>
+                        <span><strong>Email:</strong> <a href="mailto:LiamAndJulieAdopt@gmail.com">LiamAndJulieAdopt@gmail.com</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <article id="family-intro" class="container-fluid">
+        <a class="button button-green video-link hide" href="">Our Adoption Video</a>
+        <aside class="video-widget text-center">
+            <h4>Our Adoption Video!</h4>
+            <div class="video">
+                {{ theme:image file="video-demo.jpg"}}
+            </div>
+        </aside>
+        <h3>Dear Birthmother,</h3>
+        <p>Welcome to our profile! Our names are Liam and Julie, and we are excited to have you read our letter and get to know a little more about us. We know this only offers you a quick glimpse into who we are but hopefully you will see we are a kind, loving, generous couple who strive to follow in Christ’s example.
+            Kids have always been a part of our family plan. After just one year of attempting to have a biological child, it was an easy decision for us to adopt. What is important to us is to have a child that we can love unconditionally and raise together.</p>
+        <p>Over the years, we have visited each of our siblings as our nieces and nephews were born. We play video games, my little pony, hide-and-go-seek and read books. If there is a baby that does not want to go to sleep, Liam is the “go-to” guy. We just hope that this talent continues when we have a baby of our own to put to sleep!</p>
+        <p>Our family loves having kids fill a house. Even in homes where kids no longer reside, toys abound. When we told our family and friends that we were going to adopt a baby, we found open arms and excitement. Of the most excited was one of Liam’s best friends, who is adopted himself. This baby will add one more smiling face to that growing generation of children. We are excited for the day when we are able to bring a baby home.</p>
+        <p>We will provide a stable home full of love, encouragement and fun times. We look forward to pushing a stroller down the path by our home while walking our dog during the beautiful spring and summer months while staying cozy inside watching the snow fall over the river during the cold winter months.</p>
+        <p>We admire your courage in considering adoptionv. We will be sure that this child will always know his or her birth story and that your decision was made out of love.</p>
+        <span class="salutation">God Bless, Liam and Julie</span>
+    </article>
+    {{ else }}
+        {{ template:body }}
+    {{ endif }}
+</div>
