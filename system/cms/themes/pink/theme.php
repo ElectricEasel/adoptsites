@@ -8,6 +8,7 @@ class Theme_Pink extends Theme {
     public $website			= 'http://electriceasel.com/';
     public $description		= 'Pink Theme for AdoptSites.';
     public $version			= '1.0.0';
+	public $thumbnail       = true;
 
 }
 
