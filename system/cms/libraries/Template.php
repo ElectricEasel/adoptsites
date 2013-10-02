@@ -183,7 +183,7 @@ class Template
 	 *
 	 * @param	string	$name
 	 * @param	mixed	$value
-	 * @return	object	$this
+	 * @return	Template	$this
 	 */
 	public function set($name, $value = null)
 	{
@@ -386,7 +386,7 @@ class Template
 	/**
 	 * Set the title of the page
 	 *
-	 * @return	object	$this
+	 * @return	Template	$this
 	 */
 	public function title()
 	{

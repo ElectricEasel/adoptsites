@@ -22,13 +22,7 @@
 	<?php echo Asset::css('plugins.css'); ?>
 	<?php echo Asset::css('workless/workless.css'); ?>
 	<?php echo Asset::css('workless/application.css'); ?>
-	<?php echo Asset::css('workless/responsive.css'); ?>
-        <?php
-        $vars = $this->load->_ci_cached_vars;
-        if ($vars['lang']['direction']=='rtl'){
-            echo Asset::css('workless/rtl/rtl.css');
-        }
-        ?>
+	<?php echo Asset::css('template.css'); ?>
 	<!-- End CSS-->
 
 	<!-- Load up some favicons -->
@@ -46,24 +40,20 @@
 
 <body>
 
-	<div id="container">
+	<header class="hide-on-ckeditor-maximize">
+	<?php file_partial('header'); ?>
+	</header>
 
-		<section id="content">
-			
-			<header class="hide-on-ckeditor-maximize">
-			<?php file_partial('header'); ?>
-			</header>
-
-			<div class="one_quarter">
+	<div class="container" style="padding-top:10px;">
+		<div class="row">
+			<div class="span3">
 				<?php file_partial('navigation') ?>
 			</div>
-			<div id="content-body" class="three_quarter">
+			<div id="content-body" class="span9">
 				<?php file_partial('notices'); ?>
 				<?php echo $template['body']; ?>
 			</div>
-
-		</section>
-
+		</div>
 	</div>
 
 	<footer class="clearfix">

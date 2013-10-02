@@ -33,18 +33,25 @@
 	echo form_hidden('method', $this->method);
 	echo form_hidden('theme'); ?>
 	<div id="theme-box">
-		<?php for ($i = 0; $i < 2; $i++) : // iterate twice for dev effect; ?>
+		<div class="row-fluid">
+		<?php $i = 0; ?>
+		<?php for ($k = 0; $k < 2; $k++) : // iterate twice for dev effect; ?>
 		<?php foreach ($themes as $theme) : if (!isset($theme->thumbnail)) continue; ?>
-		<div class="item">
+		<div class="span4 item">
 			<img src="<?php echo $theme->path; ?>/thumbnail.png" />
 			<div class="overlay">
 				<span><?php echo $theme->name; ?></span>
-				<a href="<?php echo $theme->screenshot ?>" rel="screenshots" title="<?php echo $theme->name ?>" class="button modal"><?php echo lang('buttons:preview') ?></a>
-				<button class="button" onclick="setTheme('<?php echo $theme->slug; ?>');">Apply</button>
+				<a href="<?php echo $theme->screenshot ?>" title="<?php echo $theme->name ?>" class="btn btn-default"><?php echo lang('buttons:preview') ?></a>
+				<button class="btn btn-primary" onclick="setTheme('<?php echo $theme->slug; ?>');">Apply</button>
 			</div>
 		</div>
+		<?php if (++$i % 3 == 0) : ?>
+		</div>
+		<div class="row-fluid">
+		<?php endif; ?>
 		<?php endforeach; ?>
 		<?php endfor; ?>
+		</div>
 	</div>
 
 	<?php $this->load->view('admin/partials/pagination') ?>

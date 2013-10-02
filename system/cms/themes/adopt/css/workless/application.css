@@ -48,13 +48,6 @@
   width: 250px;
 }
 
-.topbar {
-  height: 200px;
-  -webkit-transform: translate3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  -webkit-perspective: 1000;
-}
-
 #logo {
   float: left;
   padding: 10px 0 15px;
@@ -175,14 +168,10 @@ button#remove_installer_directory:hover {
 }
 
 .subbar {
-  position: absolute;
-  top: 64px!important;
   right: 0;
   left: 0;
-  z-index: 9997;
   height: 20px;
   padding: 5px;
-  margin-top: 15px;
   background: #333;
   border-top: 1px solid #4c4c4c;
   border-bottom: 1px solid #1a1a1a;
@@ -209,11 +198,6 @@ button#remove_installer_directory:hover {
 
 .subbar .container {
   width: auto;
-}
-
-#content-body {
-  position: relative;
-  top: 135px;
 }
 
 .subbar .wrapper {
@@ -390,11 +374,6 @@ margin-top: -4px;
 }
 
 .sections_bar {
-  position: absolute;
-  top: 94px!important;
-  right: 0;
-  left: 0;
-  z-index: 9995;
   width: 100%;
   height: 33px;
   background: white;
@@ -414,29 +393,6 @@ margin-top: -4px;
 
 .sections_bar ul li:first-child {
   padding-left: 0;
-}
-
-.sections_bar ul li.current:before {
-  position: absolute;
-  bottom: -6px;
-  left: 40%;
-  display: inline-block;
-  border-top: 6px solid #ccc;
-  border-right: 6px solid transparent;
-  border-left: 6px solid transparent;
-  border-bottom-color: rgba(0, 0, 0, 0.2);
-  content: '';
-}
-
-.sections_bar ul li.current:after {
-  position: absolute;
-  top: 32px;
-  left: 40%;
-  display: inline-block;
-  border-top: 6px solid white;
-  border-right: 6px solid transparent;
-  border-left: 6px solid transparent;
-  content: '';
 }
 
 .sections_bar ul li a {
@@ -979,9 +935,8 @@ ul#recent_comments li p {
 footer {
   float: right;
   width: 100%;
-  height: 60px;
+  height: 40px;
   padding: 0;
-  margin-top: -61px;
   color: #eee;
   background: #444444 url('../../img/nav-grain.png') repeat;
   border-top: 1px solid #222;
@@ -996,7 +951,7 @@ footer p.credits {
   display: inline-block;
   float: none;
   padding: 0 10px 0 0;
-  margin: 20px 0 0 0px;
+  margin: 10px 0 0 10px;
   font-size: 12px;
   font-weight: 500;
   line-height: 20px;
@@ -1112,97 +1067,4 @@ table > tbody > tr {
   font-size: 11px;
   color: #5D7F88;
   background: #E3ECEE;
-}
-
-
-
-
-.primary-nav {
-    background:#f9f9f9;
-}
-.primary-nav li {
-    padding:15px;
-    background:#f9f9f9;
-    font-size:14px;
-    -webkit-box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
-    -moz-box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
-    -ms-box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
-    -o-box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
-    box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
-}
-.primary-nav li:hover {
-    background-color:#84d4fa;
-}
-.primary-nav li a {
-    color:#3c3c3c;
-}
-.primary-nav li:hover > a {
-    color:#fff;
-}
-
-
-
-#theme-box .item {
-    position: relative;
-    float:left;
-    margin:8px;
-}
-
-#theme-box .item .overlay {
-    position: absolute;
-    top:0;
-    left:0;
-    height:100%;
-    width:100%;
-    display:none;
-    background:rgba(66, 66, 66, 0.75);
-    text-align: center;
-}
-#theme-box .item:hover .overlay {
-    display:block;
-}
-#theme-box .item .overlay span {
-    display:block;
-    color:#fff;
-    font-size:18px;
-    margin:50px 0 15px 0;
-}
-
-.inset-shadow {
-    -webkit-box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
-    -moz-box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
-    -ms-box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
-    -o-box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
-    box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
-}
-.blue-bg {
-    background-color:#84d4fa;
-}
-
-#default-theme {
-    padding:15px;
-    margin-bottom:20px;
-}
-
-#default-theme img {
-    float:left;
-    margin-right:15px;
-    width:175px;
-}
-#default-theme .details {
-    float:left;
-}
-#default-theme .details h4 {
-    color:#FFF;
-    font-size:18px;
-    margin:0 0 50px;
-}
-#default-theme .details span {
-    font-weight:bold;
-    margin-bottom:10px;
-    display:block;
-}
-#default-theme .details p {
-    font-style:italic;
-    font-size:14px;
 }
