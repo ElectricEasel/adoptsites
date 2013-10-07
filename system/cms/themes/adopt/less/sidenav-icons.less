@@ -1,0 +1,157 @@
+
+@font-face {
+  font-family: 'Glyphicons Regular';
+  src: url('../fonts/glyphicons-regular.eot');
+  src: url('../fonts/glyphicons-regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/glyphicons-regular.woff') format('woff'),
+  url('../fonts/glyphicons-regular.ttf') format('truetype'),
+  url('../fonts/glyphicons-regular.svg#glyphiconsregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.nav-list {
+  li {
+    i {
+      position: relative;
+      padding-left:32px;
+      color: #b2b2b2;
+      text-decoration: none;
+      *display: inline;
+      *zoom: 1;
+      vertical-align:middle;
+
+      &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: inline-block;
+        margin:0 5px 0 0;
+        font: 16px/1em 'Glyphicons Regular';
+        font-style: normal;
+        font-weight: normal;
+        color: inherit;
+        *display: inline;
+        *zoom: 1;
+        vertical-align:middle;
+        text-transform:none;
+        -webkit-font-smoothing: antialiased;
+      }
+    }
+
+    &.active i,
+    &:hover i {
+      color:inherit;
+    }
+  }
+
+  .content {
+    &-blog i:before {
+      content:"\E236";
+    }
+
+    &-files i:before {
+      content:"\E145";
+    }
+
+    &-galleries i:before {
+      content:"\E139";
+    }
+
+    &-pages i:before {
+      content:"\1F4CE";
+    }
+
+    &-streams i:before {
+      content:"\E115";
+    }
+
+    &-widgets i:before {
+      content:"\E155";
+    }
+  }
+
+  .structure {
+    &-domains i:before {
+      content:"\E341";
+    }
+
+    &-email-templates i:before {
+      content:"\2709";
+    }
+
+    &-navigation i:before {
+      content:"\E139";
+    }
+
+    &-redirects i:before {
+      content:"\E222";
+    }
+  }
+
+  .data {
+    &-keywords i:before {
+      content:"\E045";
+    }
+
+    &-maintenance i:before {
+      content:"\E281";
+    }
+
+    &-variables i:before {
+      content:"\E328";
+    }
+  }
+
+  .users {
+    &-groups i:before {
+      content:"\E044";
+    }
+
+    &-permissions i:before {
+      content:"\E205";
+    }
+
+    &-users i:before {
+      content:"\E089";
+    }
+  }
+
+  .add-ons {
+    &-modules i:before {
+      content:"\E156";
+    }
+
+    &-themes i:before {
+      content:"\E161";
+    }
+
+    &-plugins i:before {
+      content:"\E182";
+    }
+
+    &-widgets i:before {
+      content:"\E157";
+    }
+
+    &-field-types i:before {
+      content:"\E060";
+    }
+  }
+
+  .profile {
+    &-edit-profile i:before {
+      content:"\E004";
+    }
+
+    &-logout i:before {
+      content:"\E064";
+    }
+  }
+
+  .settings {
+    &-settings i:before {
+      content:"\E138";
+    }
+  }
+}
