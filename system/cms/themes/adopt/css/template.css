@@ -5090,11 +5090,7 @@ input[type="submit"].btn.btn-mini {
 .nav-list > li > a {
   padding: 15px;
   color: #3c3c3c;
-  -webkit-box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
-  -moz-box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
-  -ms-box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
-  -o-box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
-  box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
+  box-shadow: -1px -1px 1px 0 rgba(0, 0, 0, 0.15) inset;
 }
 .nav-list > li:hover a,
 .nav-list > .active > a,
@@ -9068,6 +9064,9 @@ a.badge:focus {
 .blue-bg {
   background-color: #84d4fa;
 }
+.dark-blue-bg {
+  background-color: #008ed1;
+}
 #default-theme {
   padding: 15px;
   margin-bottom: 20px;
@@ -9093,4 +9092,30 @@ a.badge:focus {
 #default-theme .details p {
   font-style: italic;
   font-size: 14px;
+}
+#quick-links div {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
+  -moz-box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
+  -ms-box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
+  -o-box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
+  box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;
+}
+#quick-links div * {
+  text-align: center;
+  color: #FFF;
+  text-decoration: none;
+}
+#quick-links span {
+  display: block;
+  padding: 15px 30px;
+}
+#quick-links i:before {
+  margin: auto;
+  font-size: 42px;
+  display: block;
+  position: relative;
+  text-align: center;
 }

@@ -1,38 +1,73 @@
-<!-- Begin Quick Links -->
-<section id="quick_links" class="<?php echo isset($rss_items) ?>">
-	<div class="">
-		<ul>
-			<?php if((array_key_exists('comments', $this->permissions) OR $this->current_user->group == 'admin') AND module_enabled('comments')): ?>
-				<li>
-					<a class="tooltip-s" title="<?php echo lang('cp:manage_comments') ?>" href="<?php echo site_url('admin/comments') ?>"><?php echo Asset::img('icons/comments.png', lang('cp:manage_comments')) ?></a>
-				</li>
-			<?php endif ?>
+<h1>Welcome, Liam and Julie!</h1>
 
-			<?php if((array_key_exists('pages', $this->permissions) OR $this->current_user->group == 'admin') AND module_enabled('pages')): ?>
-				<li>
-					<a class="tooltip-s" title="<?php echo lang('cp:manage_pages') ?>" href="<?php echo site_url('admin/pages') ?>"><?php echo Asset::img('icons/pages.png', lang('cp:manage_pages')) ?></a>
-				</li>
-			<?php endif ?>
-
-			<?php if((array_key_exists('files', $this->permissions) OR $this->current_user->group == 'admin') AND module_enabled('files')): ?>
-				<li>
-					<a class="tooltip-s" title="<?php echo lang('cp:manage_files') ?>" href="<?php echo site_url('admin/files') ?>"><?php echo Asset::img('icons/files.png', lang('cp:manage_files')) ?></a>
-				</li>
-			<?php endif ?>
-
-			<?php if(array_key_exists('users', $this->permissions) OR $this->current_user->group == 'admin'): ?>
-				<li>
-					<a class="tooltip-s" title="<?php echo lang('cp:manage_users') ?>" href="<?php echo site_url('admin/users') ?>"><?php echo Asset::img('icons/users.png', lang('cp:manage_users')) ?></a>
-				</li>
-			<?php endif ?>
-		</ul>
+<div class="row-fluid" id="quick-links" style="display:none;">
+<?php if((array_key_exists('comments', $this->permissions) OR $this->current_user->group == 'admin') AND module_enabled('comments')): ?>
+	<div class="span3">
+		<a class="tooltip-s" title="<?php echo lang('cp:manage_comments') ?>" href="<?php echo site_url('admin/comments') ?>"><?php echo Asset::img('icons/comments.png', lang('cp:manage_comments')) ?></a>
 	</div>
-</section>
-<!-- End Quick Links -->
+<?php endif ?>
+
+<?php if((array_key_exists('pages', $this->permissions) OR $this->current_user->group == 'admin') AND module_enabled('pages')): ?>
+		<div class="span3">
+		<a class="tooltip-s" title="<?php echo lang('cp:manage_pages') ?>" href="<?php echo site_url('admin/pages') ?>"><?php echo Asset::img('icons/pages.png', lang('cp:manage_pages')) ?></a>
+	</div>
+<?php endif ?>
+
+<?php if((array_key_exists('files', $this->permissions) OR $this->current_user->group == 'admin') AND module_enabled('files')): ?>
+			<div class="span3">
+		<a class="tooltip-s" title="<?php echo lang('cp:manage_files') ?>" href="<?php echo site_url('admin/files') ?>"><?php echo Asset::img('icons/files.png', lang('cp:manage_files')) ?></a>
+	</div>
+<?php endif ?>
+
+<?php if(array_key_exists('users', $this->permissions) OR $this->current_user->group == 'admin'): ?>
+	<div class="span3">
+		<a class="tooltip-s" title="<?php echo lang('cp:manage_users') ?>" href="<?php echo site_url('admin/users') ?>"><?php echo Asset::img('icons/users.png', lang('cp:manage_users')) ?></a>
+	</div>
+<?php endif ?>
+</div>
+
+<div class="row-fluid" id="quick-links">
+	<div class="span3 blue-bg">
+		<a href="#">
+			<i class="icon icon-picture"></i>
+			<span>Add New Photo or Gallery</span>
+		</a>
+	</div>
+	<div class="span3 blue-bg">
+		<a href="#">
+			<i class="icon icon-pen"></i>
+			<span>Add New Journal Entry</span>
+		</a>
+	</div>
+	<div class="span3 blue-bg">
+		<a href="#">
+			<i class="icon icon-camera"></i>
+			<span>Change My Profile Photo</span>
+		</a>
+	</div>
+	<div class="span3 blue-bg">
+		<a href="/admin/addons/themes">
+			<i class="icon icon-imac"></i>
+			<span>Change My AdoptSite Template</span>
+		</a>
+	</div>
+</div>
+
+<div class="row-fluid blue-bg" style="margin-top:15px">
+	<div class="span12">
+		<section class="title">
+			<h4>My AdoptSite Stats</h4>
+		</section>
+		<section class="item">
+			<div class="content">
+				<img src="/system/cms/themes/adopt/img/stats.png" alt="Stats" style="width:100%" />
+			</div>
+		</section>
+	</div>
+</div>
 
 <!-- Add an extra div to allow the elements within it to be sortable! -->
 <div>
-
 	<!-- Dashboard Widgets -->
 	{{ widgets:area slug="dashboard" }}
 
@@ -108,73 +143,101 @@
 		
 		});
 	</script>
-	<div class="one_half">
-		<section class="title">
-			<h4>Statistics</h4>
-		</section>	
-		<section class="item">
-			<div class="content">
-				<div id="analytics"></div>
-			</div>
-		</section>
+	<div class="row-fluid">
+		<div class="span12">
+			<section class="title">
+				<h4>Statistics</h4>
+			</section>
+			<section class="item">
+				<div class="content">
+					<div id="analytics"></div>
+				</div>
+			</section>
+		</div>
 	</div>
-	
+</div>
 	<?php endif ?>
 	<!-- End Analytics -->
-
+<div class="row-fluid" style="margin-top:15px;">
 	<!-- Begin RSS Feed -->
 	<?php if ( isset($rss_items) AND $theme_options->pyrocms_news_feed == 'yes') : ?>
-	<div id="feed" class="one_half">
-		
-		<section class="title">
-			<h4><?php echo lang('cp:news_feed_title') ?></h4>
-		</section>
-		
-		<section class="item">
-			<div class="content">
-				<ul>
-					<?php foreach($rss_items as $rss_item): ?>
-					<li>
-							
-						<?php
-							$item_date	= strtotime($rss_item->get_date());
-							$item_month = date('M', $item_date);
-							$item_day	= date('j', $item_date);
-						?>
-							
-						<div class="date">
-							<div class="time">
-								<span class="month">
-									<?php echo $item_month ?>
-								</span>
-								<span class="day">
-									<?php echo $item_day ?>
-								</span>
-							</div>
-						</div>
-						<div class="post">
-							<h4><?php echo anchor($rss_item->get_permalink(), $rss_item->get_title(), 'target="_blank"') ?></h4>
-						</div>
-					</li>
-					<?php endforeach ?>
-				</ul>
-			</div>
-		</section>
+		<div id="feed" class="span6">
 
-	</div>		
+			<section class="title">
+				<h4>Recent Blog Posts</h4>
+			</section>
+
+			<section class="item">
+				<div class="content">
+					<ul class="unstyled">
+						<?php foreach($rss_items as $rss_item): ?>
+							<li class="row-fluid">
+								<?php
+								$item_date	= strtotime($rss_item->get_date());
+								$item_month = date('M', $item_date);
+								$item_day	= date('j', $item_date);
+								?>
+
+								<div class="date span4">
+									<div class="time">
+										<span class="month">
+											<?php echo $item_month ?>
+										</span>
+										<span class="day">
+											<?php echo $item_day ?>
+										</span>
+									</div>
+								</div>
+								<div class="span8">
+									<h4><?php echo anchor($rss_item->get_permalink(), $rss_item->get_title(), 'target="_blank"') ?></h4>
+								</div>
+							</li>
+						<?php endforeach ?>
+					</ul>
+				</div>
+			</section>
+		</div>
 	<?php endif ?>
 	<!-- End RSS Feed -->
-	<script type="text/javascript">
-		(function ($) {
+	<!-- Begin RSS Feed -->
+	<?php if ( isset($rss_items) AND $theme_options->pyrocms_news_feed == 'yes') : ?>
+		<div id="feed" class="span6">
 
-			$('#remove_installer_directory').on('click', function (e) {
-				e.preventDefault();
-				var $parent = $(this).parent();
-				$.get(SITE_URL + 'admin/remove_installer_directory', function (data) {
-					$parent.removeClass('warning').addClass(data.status).html(data.message);
-				});
-			});
-		})(jQuery);
-	</script>
+			<section class="title">
+				<h4>Tutorials</h4>
+			</section>
+
+			<section class="item">
+				<div class="content">
+					<ul class="unstyled">
+						<?php foreach($rss_items as $rss_item): ?>
+							<li class="row-fluid">
+								<?php
+								$item_date	= strtotime($rss_item->get_date());
+								$item_month = date('M', $item_date);
+								$item_day	= date('j', $item_date);
+								?>
+
+								<div class="date span4">
+									<div class="time">
+										<span class="month">
+											<?php echo $item_month ?>
+										</span>
+										<span class="day">
+											<?php echo $item_day ?>
+										</span>
+									</div>
+								</div>
+								<div class="span8">
+									<h4><?php echo anchor($rss_item->get_permalink(), $rss_item->get_title(), 'target="_blank"') ?></h4>
+								</div>
+							</li>
+						<?php endforeach ?>
+					</ul>
+				</div>
+			</section>
+		</div>
+	<?php endif ?>
+	<!-- End RSS Feed -->
 </div>
 <!-- End sortable div -->

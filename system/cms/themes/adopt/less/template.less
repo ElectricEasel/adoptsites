@@ -71,6 +71,9 @@
 .blue-bg {
   background-color:#84d4fa;
 }
+.dark-blue-bg {
+  background-color: #008ed1;
+}
 
 #default-theme {
   padding:15px;
@@ -98,4 +101,31 @@
 #default-theme .details p {
   font-style:italic;
   font-size:14px;
+}
+
+#quick-links {
+
+  div {
+    .border-radius(5px);
+    .inset-shadow();
+
+    * {
+      text-align: center;
+      color:#FFF;
+      text-decoration: none;
+    }
+  }
+
+  span {
+    display:block;
+    padding:15px 30px;
+  }
+
+  i:before {
+    margin:auto;
+    font-size:42px;
+    display:block;
+    position: relative;
+    text-align: center;
+  }
 }

@@ -1,4 +1,8 @@
 <div class="well" style="padding:0">
+	<img src="/system/cms/themes/adopt/img/dashboard_sample.jpg" alt="Stats" style="width:100%" />
+	<div class="dark-blue-bg inset-shadow" style="padding:20px;color:#FFF;">
+		Liam & Julie
+	</div>
 	<ul class="nav nav-list">
 
 		<li class="<?php echo !$this->module ? ' active' : ''; ?>"><?php echo anchor('admin', '<i class="icon icon-home"></i>'.lang('global:dashboard')) ?></li>

@@ -41,7 +41,7 @@
 			<img src="<?php echo $theme->path; ?>/thumbnail.png" />
 			<div class="overlay">
 				<span><?php echo $theme->name; ?></span>
-				<a href="<?php echo $theme->screenshot ?>" title="<?php echo $theme->name ?>" class="btn btn-default"><?php echo lang('buttons:preview') ?></a>
+				<a href="<?php echo $theme->screenshot ?>" title="<?php echo $theme->name ?>" rel="modal" class="btn btn-default"><?php echo lang('buttons:preview') ?></a>
 				<button class="btn btn-primary" onclick="setTheme('<?php echo $theme->slug; ?>');">Apply</button>
 			</div>
 		</div>
