@@ -8932,6 +8932,9 @@ a.badge:focus {
 .nav-list li:hover i {
   color: inherit;
 }
+.nav-list .content-about-page i:before {
+  content: "\E196";
+}
 .nav-list .content-blog i:before {
   content: "\E236";
 }

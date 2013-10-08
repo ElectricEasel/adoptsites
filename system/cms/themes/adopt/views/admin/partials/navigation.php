@@ -21,7 +21,9 @@
 				foreach ($menu_item as $lang_key => $uri)
 				{
 					$itemClass = str_replace(' ', '-', $class.'-'.strtolower(lang_label($lang_key)));
-					echo '<li><a href="'.site_url($uri).'" class="'.$itemClass.'"><i></i>'.lang_label($lang_key).'</a></li>';
+
+					echo ($uri === 'admin/' . $this->module) ? '<li class="active">' : '<li>';
+					echo '<a href="'.site_url($uri).'" class="'.$itemClass.'"><i></i>'.lang_label($lang_key).'</a></li>';
 
 				}
 			}
