@@ -47,7 +47,7 @@ class Field_choice
 	 * @return	string
 	 */
 	public function form_output($params, $entry_id, $field)
-	{		
+	{
 		$choices = $this->_choices_to_array($params['custom']['choice_data'], $params['custom']['choice_type'], $field->is_required);
 
 		// Only put in our brs for the admin

@@ -1,0 +1,9 @@
+.modal-body .item {
+    margin:8px;
+    cursor:pointer;
+}
+
+.modal-body .item:hover,
+.modal-body .selected {
+    background-color:#84D4FA;
+}

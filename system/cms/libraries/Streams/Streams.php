@@ -6,6 +6,13 @@
  * @package		PyroStreams
  * @author		PyroCMS Dev Team
  * @copyright	Copyright (c) 2011 - 2013, PyroCMS
+ *
+ * @property  Streams_streams   $streams
+ * @property  Streams_entries   $entries
+ * @property  Streams_fields    $fields
+ * @property  Streams_cp        $cp
+ * @property  Streams_utilities $utilities
+ * @property  Streams_parse     $parse
  */ 
 class Streams extends CI_Driver_Library {
 

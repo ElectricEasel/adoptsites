@@ -1,5 +1,10 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
+/**
+ * Class Module_About
+ *
+ * @property Streams $streams
+ */
 class Module_About extends Module
 {
     public $version = '1.0';
@@ -39,32 +44,30 @@ class Module_About extends Module
 
         $this->load->language('about/about');
 
-        // Add faqs streams
-        if ( ! $this->streams->streams->add_stream('lang:about:abouts', 'abouts', 'about', 'about_', null)) return false;
+        // Add about streams
+        if ( ! $this->streams->streams->add_stream('lang:about:title', 'about', 'about', 'about_', null)) return false;
 
-        //$faq_categories
+	    // Include the fields for this stream.
+	    $fields = self::getFields();
 
-        // Add some fields
-        $fields = array(
-            array(
-                'name' => 'Title',
-                'slug' => 'about_title',
-                'namespace' => 'about',
-                'type' => 'text',
-                'required' => true
-            )
-        );
+	    // Assign all the fields to the 'about' namespace
+	    $this->streams->fields->add_fields(array_map(function($field) {
+				    $field['namespace'] = $field['assign'] = 'about';
 
-        $this->streams->fields->add_fields($fields);
-
-        $this->streams->streams->update_stream('abouts', 'about', array(
-            'view_options' => array(
-                'id'
-            )
-        ));
+				    return $field;
+			    }, $fields));
 
         return true;
     }
+
+	/**
+	 * Method to get the fields array.
+	 * @return array
+	 */
+	public static function getFields()
+	{
+		return include __DIR__ . '/stream_fields.php';
+	}
 
     /**
      * Uninstall
