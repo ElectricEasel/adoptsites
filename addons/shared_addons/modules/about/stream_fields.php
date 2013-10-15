@@ -280,7 +280,7 @@ return array(
 	),
 	array (
 		'name' => 'Parent 2 Favorite School Subject',
-		'slug' => 'parent_2_fav_school_subhect',
+		'slug' => 'parent_2_fav_school_subject',
 		'fieldset' => 'parent-2',
 		'type' => 'text'
 	),

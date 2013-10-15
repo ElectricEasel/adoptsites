@@ -44,6 +44,13 @@ class Field_file_select
 	public $CI;
 
 	/**
+	 * Holds the initialized state for this field.
+	 *
+	 * @var bool
+	 */
+	protected static $initialized = false;
+
+	/**
 	 * Output form input
 	 *
 	 * @param array $data Array of data about the current field.
@@ -53,16 +60,23 @@ class Field_file_select
 	 *              'value' => 'value of field if present',
 	 *              'max_length' => null // actual max length if set
 	 *          ]
+	 *
+	 * @return string
 	 */
 	public function form_output(array $data = array())
 	{
-		$this
-			->addJs('file_select.js')
-		    ->addCss('file_select.css');
+		$this->initialize();
 
-		return $this->loadView('input', $data, true);
+		return $this->loadView('input', $data);
 	}
 
+	/**
+	 * Method to lazy load the content of the file select modal via AJAX.
+	 *
+	 * Accessible via XHR @ /streams_core/public_ajax/field/file_select/modal
+	 *
+	 * @return string
+	 */
 	public function ajax_modal()
 	{
 		$this->CI->load->library('files/files');
@@ -76,6 +90,23 @@ class Field_file_select
 
 	// Here be dragons!
 	//------------------------------------------
+
+	/**
+	 * Initialize the field by adding the CSS and JS.
+	 *
+	 * @return void
+	 */
+	protected function initialize()
+	{
+		if (! self::$initialized)
+		{
+			$this
+				->addJs('file_select.js')
+				->addCss('file_select.css');
+
+			self::$initialized = true;
+		}
+	}
 
 	/**
 	 * Convenience method for adding a CSS file.

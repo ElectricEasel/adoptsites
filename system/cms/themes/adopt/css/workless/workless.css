@@ -455,22 +455,6 @@ label.inline {
   font-weight: 400!important;
 }
 
-input,
-select,
-textarea {
-  margin: 0;
-  margin: 5px 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  *vertical-align: middle;
-  outline: none;
-}
-
-select {
-  /* min-width:260px; */
-
-}
-
 .cke_dialog select {
   min-width: 0;
   visibility: visible;
@@ -484,10 +468,7 @@ select.skip {
 }
 
 .button,
-.cancel,
-input[type="reset"],
-input[type="submit"],
-input[type="button"] {
+.cancel {
   width: auto;
   padding: 3px 10px;
   overflow: visible;
@@ -530,10 +511,7 @@ a.button {
 }
 
 .button:hover,
-.cancel:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover,
-input[type="button"]:hover {
+.cancel:hover {
   color: #000;
   background: #fff;
   background-image: -khtml-gradient(linear, left top, left bottom, from(#dddddd), to(#ffffff));
@@ -548,56 +526,6 @@ input[type="button"]:hover {
   -webkit-transition: 250ms linear all;
      -moz-transition: 250ms linear all;
           transition: 250ms linear all;
-}
-
-input[type="text"],
-input[type="password"],
-textarea {
-  width: 30%;
-  padding: 5px 5px;
-  margin-bottom: 5px;
-  background: #eee;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 2px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
-}
-
-input[type="file"] {
-  margin: 20px 0;
-}
-
-input[type="text"],
-input[type="password"],
-input[type="file"],
-textarea {
-  -webkit-transition: 250ms linear all;
-     -moz-transition: 250ms linear all;
-          transition: 250ms linear all;
-}
-
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="file"]:focus,
-textarea:focus {
-  background: #fff;
-  /*
-border:1px solid #38a7e6;
-	box-shadow:0 0 5px #38a7e6;
-*/
-
-}
-
-input.error {
-  border: 5px solid red;
-  border: 5px solid rgba(255, 0, 0, 0.5);
-}
-
-/* Colors for form validity */
-
-
-input:invalid,
-textarea:invalid {
-  background-color: #f0dddd;
 }
 
 .required-icon {

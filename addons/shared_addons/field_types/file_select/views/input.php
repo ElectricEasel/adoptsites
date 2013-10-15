@@ -1,8 +1,9 @@
-<div class="input-append">
-	<input class="span3" type="text" id="<?php echo $form_slug; ?>" name="<?php echo $form_slug; ?>" />
-	<button type="button" class="btn btn-primary" onclick="FileSelect.modal('<?php echo $form_slug; ?>');">
-		Associate Photo
-	</button>
+<input type="hidden" id="<?php echo $form_slug; ?>" name="<?php echo $form_slug; ?>" value="<?php echo $value; ?>" />
+<button type="button" class="btn btn-primary" onclick="FileSelect.modal('<?php echo $form_slug; ?>');">
+	Associate Photo
+</button>
+<div id="preview_<?php echo $form_slug; ?>">
+
 </div>
 <div class="modal fade" id="modal_<?php echo $form_slug; ?>" data-remote="/streams_core/public_ajax/field/file_select/modal">
 	<div class="modal-header">
@@ -13,6 +14,6 @@
 	</div>
 	<div class="modal-footer">
 		<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-		<button type="button" class="btn btn-primary" onclick="FileSelect.select('<?php echo $form_slug; ?>');">Ok</button>
+		<button type="button" class="btn btn-primary" onclick="FileSelect.select('<?php echo $form_slug; ?>');">Select</button>
 	</div>
 </div>

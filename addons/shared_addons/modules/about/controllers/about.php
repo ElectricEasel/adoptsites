@@ -27,6 +27,7 @@ class About extends Public_Controller
      */
     public function index()
     {
+	    $data = array();
         $params = array(
             'stream' => 'about',
             'namespace' => 'about'
@@ -34,12 +35,17 @@ class About extends Public_Controller
 
         $about = $this->streams->entries->get_entries($params);
 
-	    // Get the one and only entry
-	    $data['about'] = $about['entries'][0];
+	    // Prevent the "undefined index" notice if the about page hasn't been created yet.
+	    if (count($about['entries']))
+	    {
+		    // Get the one and only entry
+		    $data = (array) $about['entries'][0];
+	    }
 
         // Build the page
-        $this->template->title($this->module_details['name'])
-                ->build('index', $data);
+        $this->template
+	        ->title($this->module_details['name'])
+            ->build('index', $data);
     }
 
 }
