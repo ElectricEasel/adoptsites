@@ -953,7 +953,13 @@ class Template
 				// This allows build('pages/page') to still overload same as build('page')
 				$this->get_views_path(true) . 'modules/' . $view,
 				$this->get_views_path(true) . $view
-			);
+			);/*
+
+			
+			echo '<pre>';
+			print_r($theme_views);
+			echo '</pre>';
+*/
 
 			foreach ($theme_views as $theme_view)
 			{

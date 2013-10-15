@@ -45,14 +45,14 @@
 			case 'save_exit':
 			case 'unapprove':
 			case 'upload': ?>
-				<button type="submit" name="btnAction" value="<?php echo $button ?>" class="<?php echo $btn_class; ?> blue">
+				<button type="submit" name="btnAction" value="<?php echo $button ?>" class="<?php echo $btn_class; ?> btn-primary">
 					<span><?php echo lang('buttons:' . $button); ?></span>
 				</button>
 				<?php break;
 			case 'cancel':
 			case 'close':
 			case 'preview':
-				if($btn_class == 'btn') $btn_class .= ' gray';
+				if($btn_class == 'btn') $btn_class .= ' btn-danger';
 				$uri = 'admin/' . $this->module_details['slug'];
 				$active_section = $this->load->get_var('active_section');
 

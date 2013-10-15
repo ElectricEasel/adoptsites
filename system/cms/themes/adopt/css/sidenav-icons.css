@@ -1,0 +1,111 @@
+@font-face {
+  font-family: 'Glyphicons Regular';
+  src: url('../fonts/glyphicons-regular.eot');
+  src: url('../fonts/glyphicons-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-regular.woff') format('woff'), url('../fonts/glyphicons-regular.ttf') format('truetype'), url('../fonts/glyphicons-regular.svg#glyphiconsregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.nav-list li i {
+  position: relative;
+  padding-left: 32px;
+  color: #b2b2b2;
+  text-decoration: none;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+}
+.nav-list li i:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  margin: 0 5px 0 0;
+  font: 16px/1em 'Glyphicons Regular';
+  font-style: normal;
+  font-weight: normal;
+  color: inherit;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+}
+.nav-list li.active i,
+.nav-list li:hover i {
+  color: inherit;
+}
+.nav-list .content-about-page i:before {
+  content: "\E196";
+}
+.nav-list .content-blog i:before {
+  content: "\E236";
+}
+.nav-list .content-files i:before {
+  content: "\E145";
+}
+.nav-list .content-galleries i:before {
+  content: "\E139";
+}
+.nav-list .content-pages i:before {
+  content: "\1F4CE";
+}
+.nav-list .content-streams i:before {
+  content: "\E115";
+}
+.nav-list .content-widgets i:before {
+  content: "\E155";
+}
+.nav-list .structure-domains i:before {
+  content: "\E341";
+}
+.nav-list .structure-email-templates i:before {
+  content: "\2709";
+}
+.nav-list .structure-navigation i:before {
+  content: "\E139";
+}
+.nav-list .structure-redirects i:before {
+  content: "\E222";
+}
+.nav-list .data-keywords i:before {
+  content: "\E045";
+}
+.nav-list .data-maintenance i:before {
+  content: "\E281";
+}
+.nav-list .data-variables i:before {
+  content: "\E328";
+}
+.nav-list .users-groups i:before {
+  content: "\E044";
+}
+.nav-list .users-permissions i:before {
+  content: "\E205";
+}
+.nav-list .users-users i:before {
+  content: "\E089";
+}
+.nav-list .add-ons-modules i:before {
+  content: "\E156";
+}
+.nav-list .add-ons-themes i:before {
+  content: "\E161";
+}
+.nav-list .add-ons-plugins i:before {
+  content: "\E182";
+}
+.nav-list .add-ons-widgets i:before {
+  content: "\E157";
+}
+.nav-list .add-ons-field-types i:before {
+  content: "\E060";
+}
+.nav-list .profile-edit-profile i:before {
+  content: "\E004";
+}
+.nav-list .profile-logout i:before {
+  content: "\E064";
+}
+.nav-list .settings-settings i:before {
+  content: "\E138";
+}

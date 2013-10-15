@@ -4285,18 +4285,18 @@ button.close {
   vertical-align: middle;
   cursor: pointer;
   color: #686868;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-  background-color: #f5f5f5;
-  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
-  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
-  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
-  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  text-shadow: none;
+  background-color: #d2d2d2;
+  background-image: -moz-linear-gradient(top, #d2d2d2, #d2d2d2);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#d2d2d2), to(#d2d2d2));
+  background-image: -webkit-linear-gradient(top, #d2d2d2, #d2d2d2);
+  background-image: -o-linear-gradient(top, #d2d2d2, #d2d2d2);
+  background-image: linear-gradient(to bottom, #d2d2d2, #d2d2d2);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
-  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd2d2d2', endColorstr='#ffd2d2d2', GradientType=0);
+  border-color: #d2d2d2 #d2d2d2 #acacac;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #e6e6e6;
+  *background-color: #d2d2d2;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
@@ -4319,11 +4319,11 @@ button.close {
 .btn[disabled] {
   color: #686868;
   background-image: none;
-  background-color: #d9d9d9;
+  background-color: #c5c5c5;
 }
 .btn:active,
 .btn.active {
-  background-color: #cccccc \9;
+  background-color: #b9b9b9 \9;
 }
 .btn:hover,
 .btn:focus,
@@ -4333,11 +4333,11 @@ button.close {
 .btn[disabled] {
   color: #686868;
   background-image: none;
-  background-color: #d9d9d9;
+  background-color: #c5c5c5;
 }
 .btn:active,
 .btn.active {
-  background-color: #cccccc \9;
+  background-color: #b9b9b9 \9;
 }
 .btn:first-child {
   *margin-left: 0;
@@ -4897,7 +4897,7 @@ input[type="submit"].btn.btn-mini {
   box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
 }
 .btn-group.open .btn.dropdown-toggle {
-  background-color: #e6e6e6;
+  background-color: #d2d2d2;
 }
 .btn-group.open .btn-primary.dropdown-toggle {
   background-color: #84d4fa;
@@ -9121,6 +9121,74 @@ a.badge:focus {
   display: block;
   position: relative;
   text-align: center;
+}
+.container-fluid.nopad {
+  padding: 0;
+}
+.journal-entries-list li.post {
+  margin-bottom: 20px;
+}
+.journal-entries-list li.post h6 {
+  color: #000;
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+.journal-entries-list li.post .image-shadow {
+  float: left;
+  max-width: 100%;
+  position: relative;
+  border: 1px solid #fff;
+}
+.journal-entries-list li.post .image-shadow:before {
+  bottom: 0;
+  box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.75) inset, 1px 1px 1px rgba(255, 255, 255, 0.5) inset;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.journal-entries-list li.post .btn {
+  font-style: italic;
+}
+.journal-entries-list li.post .btn:first-of-type {
+  margin-right: 10px;
+}
+.form_inputs fieldset {
+  width: auto;
+}
+section.item {
+  background: #efefef;
+}
+.expand {
+  background: #f9f9f9;
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+  text-align: center;
+  box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset, 0 2px 0px #ffffff inset;
+  padding: 10px 0;
+}
+.expand a.btn {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.journal-overview-intro {
+  margin-bottom: 15px;
+}
+.journal-overview-intro .icon-pen {
+  color: #22b2f6;
+  font-size: 16px;
+  padding-left: 40px;
+  min-height: 30px;
+}
+.journal-overview-intro .icon-pen:before {
+  font-size: 30px;
+  top: -5px;
+}
+.journal-entries-list li.post {
+  margin-bottom: 30px;
 }
 .streams_form .well {
   -webkit-border-radius: 0;

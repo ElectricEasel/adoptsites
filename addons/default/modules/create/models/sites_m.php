@@ -80,7 +80,7 @@ class Sites_m extends MY_Model {
 
 		$user = array('username'		=>	$username,
 					  'first_name'		=>	$input['first_name'],
-					  'last_name'		=>	$input['last_name'],
+					  'last_name'       =>	$input['last_name'],
 					  'email'			=>	$input['email'],
 					  'password'		=>	$hash->password,
 					  'salt'			=>	$hash->user_salt
@@ -105,11 +105,7 @@ class Sites_m extends MY_Model {
 					{
 						$success = $this->module_import->import_all();
 
-						// Change default admin theme
-						$this->db
-							->set('value', 'adopt')
-							->where('slug', 'admin_theme')
-							->update('settings');
+						$this->postCreateSetup($insert['ref']);
 
 						return $success;
 					}
@@ -119,18 +115,91 @@ class Sites_m extends MY_Model {
 		return false;
 	}
 
+	/**
+	 * This method does some post-creation site setup.
+	 *
+	 * @param string $ref The site ref
+	 */
+	protected function postCreateSetup($ref)
+	{
+		$this->db->set_dbprefix($ref);
+
+		// Change default admin theme
+		$this->db
+			->set('value', 'adopt')
+			->where('slug', 'admin_theme')
+			->update('settings');
+
+		$this->db->truncate('navigation_groups');
+		$this->db->truncate('navigation_links');
+
+		// Create the new Header nav group.
+		$this->db->insert('navigation_groups', array('title' => 'Header', 'abbrev' => 'header'));
+
+		// Create the new Header nav links
+		$navLinks = array(
+			array(
+				'title' => 'Home',
+				'link_type' => 'page',
+				'page_id' => 1,
+				'navigation_group_id' => 1,
+				'position' => 1,
+				'restricted_to' => 0
+			),
+			array(
+				'title' => 'About',
+				'link_type' => 'page',
+				'page_id' => 1,
+				'navigation_group_id' => 1,
+				'position' => 2,
+				'restricted_to' => 0
+			),
+			array(
+				'title' => 'Photo Gallery',
+				'link_type' => 'module',
+				'module_name' => 'galleries',
+				'navigation_group_id' => 1,
+				'position' => 3,
+				'restricted_to' => 0
+			),
+			array(
+				'title' => 'Journal',
+				'link_type' => 'module',
+				'module_name' => 'blog',
+				'navigation_group_id' => 1,
+				'position' => 4,
+				'restricted_to' => 0
+			),
+			array(
+				'title' => 'Contact',
+				'link_type' => 'page',
+				'page_id' => 2,
+				'navigation_group_id' => 1,
+				'position' => 5,
+				'restricted_to' => 0
+			)
+		);
+
+		foreach ($navLinks as $link)
+		{
+			$this->db->insert('navigation_links', $link);
+		}
+
+
+	}
+
 	protected function subscribe($plan = 'as-basic')
 	{
 		// Let's make sure the stripe_customer_id field exists.
 		if ( ! $this->db->field_exists('stripe_customer_id', 'sites'))
 		{
 			$this->dbforge->add_column('sites', array(
-			                                          'stripe_customer_id' => array(
-				                                          'type' => 'VARCHAR',
-				                                          'constraint' => 20,
-				                                          'null' => true,
-			                                          ),
-			                                     ));
+				'stripe_customer_id' => array(
+					'type' => 'VARCHAR',
+					'constraint' => 20,
+					'null' => true,
+				),
+		     ));
 		}
 
 		$this->load->config('stripe');
