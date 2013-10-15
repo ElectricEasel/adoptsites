@@ -10,7 +10,7 @@
 				<h6><?php echo $post->title ?></h6>
 				<p><?php echo $post->intro ?></p>
 				<a href="<?php echo site_url('admin/blog/edit/' . $post->id) ?>" title="<?php echo lang('global:edit')?>" class="btn btn-gray"><?php echo lang('global:edit')?></a>
-				<a href="<?php echo site_url('admin/blog/delete/' . $post->id) ?>" title="<?php echo lang('global:delete')?>" class="btn btn-red"><?php echo lang('global:delete')?></a>
+				<a href="<?php echo site_url('admin/blog/delete/' . $post->id) ?>" title="<?php echo lang('global:delete')?>" class="btn btn-danger"><?php echo lang('global:delete')?></a>
 			</div>
 		</li>
 		<?php endforeach ?>
@@ -18,8 +18,3 @@
 
 	<?php $this->load->view('admin/partials/pagination') ?>
 
-	<br>
-
-	<div class="table_action_buttons">
-		<?php $this->load->view('admin/partials/buttons', array('buttons' => array('delete', 'publish'))) ?>
-	</div>

@@ -4284,7 +4284,7 @@ button.close {
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
-  color: #ffffff;
+  color: #686868;
   text-shadow: none;
   background-color: #d2d2d2;
   background-image: -moz-linear-gradient(top, #d2d2d2, #d2d2d2);
@@ -4317,7 +4317,7 @@ button.close {
 .btn.active,
 .btn.disabled,
 .btn[disabled] {
-  color: #ffffff;
+  color: #686868;
   background-image: none;
   background-color: #c5c5c5;
 }
@@ -4331,7 +4331,7 @@ button.close {
 .btn.active,
 .btn.disabled,
 .btn[disabled] {
-  color: #ffffff;
+  color: #686868;
   background-image: none;
   background-color: #c5c5c5;
 }
@@ -9154,6 +9154,41 @@ a.badge:focus {
 }
 .journal-entries-list li.post .btn:first-of-type {
   margin-right: 10px;
+}
+.form_inputs fieldset {
+  width: auto;
+}
+section.item {
+  background: #efefef;
+}
+.expand {
+  background: #f9f9f9;
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+  text-align: center;
+  box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset, 0 2px 0px #ffffff inset;
+  padding: 10px 0;
+}
+.expand a.btn {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.journal-overview-intro {
+  margin-bottom: 15px;
+}
+.journal-overview-intro .icon-pen {
+  color: #22b2f6;
+  font-size: 16px;
+  padding-left: 40px;
+  min-height: 30px;
+}
+.journal-overview-intro .icon-pen:before {
+  font-size: 30px;
+  top: -5px;
+}
+.journal-entries-list li.post {
+  margin-bottom: 30px;
 }
 .streams_form .well {
   -webkit-border-radius: 0;
