@@ -129,3 +129,76 @@
     text-align: center;
   }
 }
+.container-fluid.nopad {
+	padding: 0;
+}
+.journal-entries-list {
+	
+	li.post {
+		margin-bottom: 20px;
+		
+		h6 {
+			color: #000;
+			font-size: 14px;
+			margin-top: 0;
+			margin-bottom: 0.5em;
+		}
+		
+		.image-shadow {
+			float: left;
+			max-width: 100%;
+			position: relative;
+			border: 1px solid #fff;
+		}
+		.image-shadow:before {
+			bottom: 0;
+			box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.75) inset,
+						1px 1px 1px rgba(255, 255, 255, 0.5) inset;
+		    content: "";
+		    left: 0;
+		    position: absolute;
+		    right: 0;
+		    top: 0;
+		}
+		.btn {
+			font-style: italic;
+		}
+		.btn:first-of-type {
+			margin-right: 10px;
+		}
+	}
+}
+
+.btn {
+	border-radius: 5px;
+	box-shadow: -1px -1px 1px rgba(0,0,0,0.2) inset,
+				1px 1px 1px rgba(255,255,255,0.5) inset;
+	padding: 5px 20px;
+	background: #fff;
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.5);
+}
+.btn.btn-gray {
+	background: @buttonGray;
+	color: @linkColor;
+}
+.btn.btn-red {
+	background: @brightRed;
+	color: @white;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+.btn.btn-red:hover,
+.btn.btn-red:active {
+	background: lighten(@brightRed,5%);
+}
+.btn.btn-gray:hover,
+.btn.btn-gray:active {
+	background: lighten(@buttonGray,5%);
+}
+
+
+
+
+
+
+
+
