@@ -772,7 +772,6 @@ section.title li:first-child {
 }
 
 section.item {
-  float: left;
   width: 100%;
   min-height: 100px;
   padding: 0;

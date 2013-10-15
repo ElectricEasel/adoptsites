@@ -1,6 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Faq extends Public_Controller
+class About extends Public_Controller
 {
 
     /**
@@ -11,9 +11,9 @@ class Faq extends Public_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->lang->load('faq');
+        $this->lang->load('about');
         $this->load->driver('Streams');
-        $this->template->append_css('module::faq.css');
+        $this->template->append_css('module::about.css');
     }
      /**
      * List all FAQs
@@ -27,18 +27,25 @@ class Faq extends Public_Controller
      */
     public function index()
     {
+	    $data = array();
         $params = array(
-            'stream' => 'faqs',
-            'namespace' => 'faq',
-            'paginate' => 'yes',
-            'pag_segment' => 4
+            'stream' => 'about',
+            'namespace' => 'about'
         );
 
-        $this->data->faqs = $this->streams->entries->get_entries($params);
+        $about = $this->streams->entries->get_entries($params);
+
+	    // Prevent the "undefined index" notice if the about page hasn't been created yet.
+	    if (count($about['entries']))
+	    {
+		    // Get the one and only entry
+		    $data = (array) $about['entries'][0];
+	    }
 
         // Build the page
-        $this->template->title($this->module_details['name'])
-                ->build('index', $this->data);
+        $this->template
+	        ->title($this->module_details['name'])
+            ->build('index', $data);
     }
 
 }

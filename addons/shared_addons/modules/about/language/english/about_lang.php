@@ -1,17 +1,10 @@
 <?php
 
-$lang['about:new']              = 'New FAQ';
-$lang['about:edit']             = 'Edit FAQ';
+$lang['about:edit']             = 'Edit Page';
 $lang['about:about']            = 'About Page';
-$lang['about:abouts']           = 'FAQs';
-$lang['about:no_abouts']        = 'There are currently no FAQs';
 
-$lang['about:submit_success']   = 'New FAQ submitted successfully.';
-$lang['about:submit_failure']   = 'There was a problem submitting your FAQ.';
-$lang['about:deleted']          = 'The FAQ was deleted.';
-
-$lang['about:categories']       = 'Categories';
-$lang['about:category:new']		= 'New Category';
+$lang['about:submit_success']   = 'Page updated.';
+$lang['about:submit_failure']   = 'There was a problem updating the page.';
 
 $lang['about:streams']           = 'Streams';
 $lang['about:view_options']      = 'View Options';
