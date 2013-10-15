@@ -9048,14 +9048,14 @@ a.badge:focus {
   background: rgba(66, 66, 66, 0.75);
   text-align: center;
 }
-#theme-box .item:hover .overlay {
-  display: block;
-}
 #theme-box .item .overlay span {
   display: block;
   color: #fff;
   font-size: 18px;
   margin: 50px 0 15px 0;
+}
+#theme-box .item:hover .overlay {
+  display: block;
 }
 .inset-shadow {
   -webkit-box-shadow: -1px -1px 2px 0 rgba(0, 0, 0, 0.15) inset;

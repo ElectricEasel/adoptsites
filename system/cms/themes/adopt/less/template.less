@@ -32,32 +32,37 @@
 }
 
 
-#theme-box .item {
-  position: relative;
-}
+#theme-box {
 
-#theme-box .item img {
-  min-width:100%;
-}
+  .item {
+    position: relative;
 
-#theme-box .item .overlay {
-  position: absolute;
-  top:0;
-  left:0;
-  height:100%;
-  width:100%;
-  display:none;
-  background:rgba(66, 66, 66, 0.75);
-  text-align: center;
-}
-#theme-box .item:hover .overlay {
-  display:block;
-}
-#theme-box .item .overlay span {
-  display:block;
-  color:#fff;
-  font-size:18px;
-  margin:50px 0 15px 0;
+    img {
+      min-width:100%;
+    }
+
+    .overlay {
+      position: absolute;
+      top:0;
+      left:0;
+      height:100%;
+      width:100%;
+      display:none;
+      background:rgba(66, 66, 66, 0.75);
+      text-align: center;
+
+      span {
+        display:block;
+        color:#fff;
+        font-size:18px;
+        margin:50px 0 15px 0;
+      }
+    }
+
+    &:hover .overlay {
+      display:block;
+    }
+  }
 }
 
 
