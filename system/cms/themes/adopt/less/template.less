@@ -232,3 +232,57 @@ section.item {
     .border-radius(0 0 5px 5px);
   }
 }
+
+.custom-stream-form {
+  textarea,
+  input[type="text"],
+  select {
+    width: 100%;
+    .box-sizing(border-box);
+  }
+
+  input[type="text"] {
+    height:30px;
+  }
+
+  .input-prepend {
+    display: block;
+
+    input {
+      border-radius: @baseBorderRadius;
+      text-indent:28px;
+    }
+    .add-on {
+      border:none;
+      background:none;
+      padding:2px 0;
+      position: absolute;
+      z-index: 3;
+
+      .social-icon {
+        padding-left:24px;
+      }
+    }
+  }
+
+  .span6 {
+    .facebook i:before {
+      content:"\E031";
+    }
+    .twitter i:before {
+      content:"\E032";
+    }
+    .flickr i:before {
+      content:"\E036";
+    }
+    .pinterest i:before {
+      content:"\E001";
+    }
+    .google_plus i:before {
+      content:"\E003";
+    }
+    .instagram i:before {
+      content:"\E033";
+    }
+  }
+}

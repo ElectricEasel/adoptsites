@@ -67,6 +67,15 @@ class Field_file_select
 	{
 		$this->initialize();
 
+		if (isset($data['value']))
+		{
+			$data['preview'] = '/files/thumb/' . $data['value'] . '/200/150/fit';
+		}
+		else
+		{
+			$data['preview'] = 'http://placehold.it/200x150.png';
+		}
+
 		return $this->loadView('input', $data);
 	}
 

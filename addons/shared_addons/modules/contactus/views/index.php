@@ -9,7 +9,7 @@
 						<h5>Adoption Preferences</h5>
 						<dl id="adoption-preferences" class="clearfix">
 							<dt>Race:</dt>
-							<dd>{{ preferred_race.value }}</dd>
+							<dd>Asian, Caucasian, Hispanic</dd>
 
 							<dt>Gender:</dt>
 							<dd>{{ preferred_gender.value }}</dd>
@@ -41,38 +41,38 @@
 			</div>
 			<div class="span6">
 				<div class="contact clearfix">
-					<p>{{ contact.bm_phone_number }} <span class="bull">&bull;</span> <a href="mailto:{{ contact.bm_email_address }}"">{{ contact.bm_email_address }}</a></p>
+					<p>1-888-123-4567 <span class="bull">&bull;</span> <a href="#">LiamAndJulieAdopt@gmail.com</a></p>
 					<ul class="social">
 						{{ if contact.twitter }}
 						<li>
-							<a href="{{ contact.twitter }}" class="twitter"></a>
+							<a href="" class="twitter">{{ contact.twitter }}</a>
 						</li>
 						{{ endif }}
 						{{ if contact.flickr }}
 						<li>
-							<a href="{{ contact.flickr }}" class="flickr"></a>
+							<a href="" class="flickr">{{ contact.flickr }}</a>
 						</li>
 						{{ endif }}
 						{{ if contact.facebook }}
 						<li>
-							<a href="{{ contact.facebook }}" class="facebook"></a>
+							<a href="" class="facebook">{{ contact.facebook }}</a>
 						</li>
 						{{ endif }}
 						{{ if contact.pinterest }}
 						<li>
-							<a href="{{ contact.pinterest }}" class="pinterest"></a>
+							<a href="" class="pinterest">{{ contact.pinterest }}</a>
 						</li>
 						{{ endif }}
 						{{ if contact.google_plus }}
 						<li>
-							<a href="{{ contact.google_plus }}" class="googleplus"></a>
+							<a href="" class="googleplus">{{ contact.google_plus }}</a>
 						</li>
 						{{ endif }}
 					</ul>
-					<a class="button button-pink" href="{{ site_url }}/contact">Send Us A Message</a>
+					<a class="button button-pink" href="/contact.php">Send Us A Message</a>
 				</div>
 				<div class="main-pic">
-					<img src="/files/thumb/{{ our_story_photo }}/585/1000" alt=""/>
+					<img src="../profile-images/main-profile-pic.jpg" alt=""/>
 				</div>
 			</div>
 		</div>
@@ -83,14 +83,10 @@
 		<article id="about" class="span9">
 			{{ if our_story }}
 			<section class="family-story row-fluid clearfix">
-				{{ if our_story_photo }}
 				<div class="span4">
-					<img src="/files/thumb/{{ our_story_photo }}/200/1000" alt=""/>
+					<img src="../profile-images/about-img.jpg" alt=""/>
 				</div>
 				<div class="span8">
-				{{ else }}
-				<div class="span12">
-				{{ endif }}
 					<h3>Our Story</h3>
 					<p>{{ our_story }}</p>
 				</div>
@@ -98,14 +94,10 @@
 			{{ endif }}
 			{{ if our_home }}
 			<section class="family-home row-fluid clearfix">
-				{{ if our_home_photo }}
 				<div class="span4">
-					<img src="/files/thumb/{{ our_home_photo }}/200/1000" alt=""/>
+					<img src="../profile-images/about-img.jpg" alt=""/>
 				</div>
 				<div class="span8">
-				{{ else }}
-				<div class="span12">
-				{{ endif }}
 					<h3>Our Home</h3>
 					<p>{{ our_home }}</p>
 				</div>
@@ -113,14 +105,10 @@
 			{{ endif }}
 			{{ if parent_1_about }}
 			<section class="about-me row-fluid clearfix">
-				{{ if parent_1_about_photo }}
 				<div class="span4">
-					<img src="/files/thumb/{{ parent_1_about_photo }}/200/1000" alt=""/>
+					<img src="../profile-images/about-img.jpg" alt=""/>
 				</div>
 				<div class="span8">
-				{{ else }}
-				<div class="span12">
-				{{ endif }}
 					<h3>About Liam</h3>
 					<p>{{ parent_1_about }}</p>
 				</div>
@@ -128,44 +116,21 @@
 			{{ endif }}
 			{{ if parent_2_about }}
 			<section class="about-spouse row-fluid clearfix">
-				{{ if parent_2_about_photo }}
 				<div class="span4">
-					<img src="/files/thumb/{{ parent_2_about_photo }}/200/1000" alt=""/>
+					<img src="../profile-images/about-img.jpg" alt=""/>
 				</div>
 				<div class="span8">
-					{{ else }}
-					<div class="span12">
-						{{ endif }}
-						<h3>About Julie</h3>
-						<p>{{ parent_2_about }}</p>
-					</div>
-			</section>
-			{{ endif }}
-			{{ if our_family_traditions }}
-			<section class="about-spouse row-fluid clearfix">
-				{{ if our_family_traditions_photo }}
-				<div class="span4">
-					<img src="/files/thumb/{{ our_family_traditions_photo }}/200/1000" alt=""/>
-				</div>
-				<div class="span8">
-				{{ else }}
-				<div class="span12">
-				{{ endif }}
-					<h3>Our Family Traditions</h3>
-					<p>{{ our_family_traditions }}</p>
+					<h3>About Julie</h3>
+					<p>{{ parent_2_about }}</p>
 				</div>
 			</section>
 			{{ endif }}
 			{{ if what_we_do_for_fun }}
 			<section class="for-fun row-fluid clearfix">
-				{{ if what_we_do_for_fun_photo }}
 				<div class="span4">
-					<img src="/files/thumb/{{ what_we_do_for_fun_photo }}/200/1000" alt=""/>
+					<img src="../profile-images/about-img.jpg" alt=""/>
 				</div>
 				<div class="span8">
-				{{ else }}
-				<div class="span12">
-				{{ endif }}
 					<h3>What We Do For Fun</h3>
 					<p>{{ what_we_do_for_fun }}</p>
 				</div>
@@ -173,14 +138,10 @@
 			{{ endif }}
 			{{ if what_led_us_to_adoption }}
 			<section class="led-to-adoption row-fluid clearfix">
-				{{ if what_led_us_to_adoption_photo }}
 				<div class="span4">
-					<img src="/files/thumb/{{ what_led_us_to_adoption_photo }}/200/1000" alt=""/>
+					<img src="../profile-images/about-img.jpg" alt=""/>
 				</div>
 				<div class="span8">
-				{{ else }}
-				<div class="span12">
-				{{ endif }}
 					<h3>What Led Us to Adoption</h3>
 					<p>{{ what_led_us_to_adoption }}</p>
 				</div>

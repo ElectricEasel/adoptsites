@@ -7,3 +7,23 @@
 .modal-body .selected {
     background-color:#84D4FA;
 }
+
+.img-container {
+    position:relative;
+}
+.img-container .overlay {
+    position: absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    display:none;
+    background:rgba(66, 66, 66, 0.75);
+    text-align: center;
+}
+.img-container:hover .overlay {
+    display:block;
+}
+.img-container .overlay .btn {
+    margin-top:65px;
+}

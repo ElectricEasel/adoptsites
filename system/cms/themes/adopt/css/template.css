@@ -3988,6 +3988,199 @@ table th[class*="span"],
 .icon-server_new:before {
   content: "\E470";
 }
+/*!
+ *
+ *  Project:  GLYPHICONS HALFLINGS
+ *  Author:   Jan Kovarik - www.glyphicons.com
+ *  Twitter:  @jankovarik
+ *
+ */
+@font-face {
+  font-family: 'Glyphicons Social Regular';
+  src: url('../fonts/glyphicons-social-regular.eot');
+  src: url('../fonts/glyphicons-social-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-social-regular.woff') format('woff'), url('../fonts/glyphicons-social-regular.ttf') format('truetype'), url('../fonts/glyphicons-social-regular.svg#glyphicons_socialregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.social-icon {
+  display: inline-block;
+  position: relative;
+  padding-left: 30px;
+  color: #B2B2B2;
+  text-decoration: none;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+}
+.social-icon:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  margin: 0 5px 0 0;
+  font: 28px/1em 'Glyphicons Social Regular';
+  font-style: normal;
+  font-weight: normal;
+  color: #B2B2B2;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+}
+.social-icon.white:before {
+  color: #fff;
+}
+.social-icon.pinterest:before {
+  content: "\E001";
+}
+.social-icon.dropbox:before {
+  content: "\E002";
+}
+.social-icon.google_plus:before {
+  content: "\E003";
+}
+.social-icon.jolicloud:before {
+  content: "\E004";
+}
+.social-icon.yahoo:before {
+  content: "\E005";
+}
+.social-icon.blogger:before {
+  content: "\E006";
+}
+.social-icon.picasa:before {
+  content: "\E007";
+}
+.social-icon.amazon:before {
+  content: "\E008";
+}
+.social-icon.tumblr:before {
+  content: "\E009";
+}
+.social-icon.wordpress:before {
+  content: "\E010";
+}
+.social-icon.instapaper:before {
+  content: "\E011";
+}
+.social-icon.evernote:before {
+  content: "\E012";
+}
+.social-icon.xing:before {
+  content: "\E013";
+}
+.social-icon.zootool:before {
+  content: "\E014";
+}
+.social-icon.dribbble:before {
+  content: "\E015";
+}
+.social-icon.deviantart:before {
+  content: "\E016";
+}
+.social-icon.read_it_later:before {
+  content: "\E017";
+}
+.social-icon.linked_in:before {
+  content: "\E018";
+}
+.social-icon.forrst:before {
+  content: "\E019";
+}
+.social-icon.pinboard:before {
+  content: "\E020";
+}
+.social-icon.behance:before {
+  content: "\E021";
+}
+.social-icon.github:before {
+  content: "\E022";
+}
+.social-icon.youtube:before {
+  content: "\E023";
+}
+.social-icon.skitch:before {
+  content: "\E024";
+}
+.social-icon.foursquare:before {
+  content: "\E025";
+}
+.social-icon.quora:before {
+  content: "\E026";
+}
+.social-icon.badoo:before {
+  content: "\E027";
+}
+.social-icon.spotify:before {
+  content: "\E028";
+}
+.social-icon.stumbleupon:before {
+  content: "\E029";
+}
+.social-icon.readability:before {
+  content: "\E030";
+}
+.social-icon.facebook:before {
+  content: "\E031";
+}
+.social-icon.twitter:before {
+  content: "\E032";
+}
+.social-icon.instagram:before {
+  content: "\E033";
+}
+.social-icon.posterous_spaces:before {
+  content: "\E034";
+}
+.social-icon.vimeo:before {
+  content: "\E035";
+}
+.social-icon.flickr:before {
+  content: "\E036";
+}
+.social-icon.last_fm:before {
+  content: "\E037";
+}
+.social-icon.rss:before {
+  content: "\E038";
+}
+.social-icon.skype:before {
+  content: "\E039";
+}
+.social-icon.e-mail:before {
+  content: "\E040";
+}
+.social-icon.vine:before {
+  content: "\E041";
+}
+.social-icon.myspace:before {
+  content: "\E042";
+}
+.social-icon.goodreads:before {
+  content: "\E043";
+}
+.social-icon.apple:before {
+  content: "\F8FF";
+}
+.social-icon.windows:before {
+  content: "\E045";
+}
+.social-icon.yelp:before {
+  content: "\E046";
+}
+.social-icon.playstation:before {
+  content: "\E047";
+}
+.social-icon.xbox:before {
+  content: "\E048";
+}
+.social-icon.android:before {
+  content: "\E049";
+}
+.social-icon.ios:before {
+  content: "\E050";
+}
 .dropup,
 .dropdown {
   position: relative;
@@ -8935,6 +9128,9 @@ a.badge:focus {
 .nav-list .content-about-page i:before {
   content: "\E196";
 }
+.nav-list .content-contact-page i:before {
+  content: "\E442";
+}
 .nav-list .content-blog i:before {
   content: "\E236";
 }
@@ -9206,4 +9402,50 @@ section.item {
   -webkit-border-radius: 0 0 5px 5px;
   -moz-border-radius: 0 0 5px 5px;
   border-radius: 0 0 5px 5px;
+}
+.custom-stream-form textarea,
+.custom-stream-form input[type="text"],
+.custom-stream-form select {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.custom-stream-form input[type="text"] {
+  height: 30px;
+}
+.custom-stream-form .input-prepend {
+  display: block;
+}
+.custom-stream-form .input-prepend input {
+  border-radius: 4px;
+  text-indent: 28px;
+}
+.custom-stream-form .input-prepend .add-on {
+  border: none;
+  background: none;
+  padding: 2px 0;
+  position: absolute;
+  z-index: 3;
+}
+.custom-stream-form .input-prepend .add-on .social-icon {
+  padding-left: 24px;
+}
+.custom-stream-form .span6 .facebook i:before {
+  content: "\E031";
+}
+.custom-stream-form .span6 .twitter i:before {
+  content: "\E032";
+}
+.custom-stream-form .span6 .flickr i:before {
+  content: "\E036";
+}
+.custom-stream-form .span6 .pinterest i:before {
+  content: "\E001";
+}
+.custom-stream-form .span6 .google_plus i:before {
+  content: "\E003";
+}
+.custom-stream-form .span6 .instagram i:before {
+  content: "\E033";
 }

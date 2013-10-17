@@ -30,14 +30,11 @@ var FileSelect = {
     select: function (id) {
         var targetInput = $('#' + id),
             modalDiv = $('#modal_' + id),
-            previewDiv = $('#preview_' + id),
-            previewImg = document.createElement('img'),
+            previewImg = $('#preview_' + id),
             selectedItem = modalDiv.find('.modal-body').find('.selected').data('id');
 
-        previewImg.src = '/files/thumb/' + selectedItem + '/100/100/crop';
-        previewImg.class = "img-polaroid";
+        previewImg.attr('src', '/files/thumb/' + selectedItem + '/200/150/fit');
 
-        previewDiv.append(previewImg);
         targetInput.val(selectedItem);
 
         modalDiv.modal('hide');

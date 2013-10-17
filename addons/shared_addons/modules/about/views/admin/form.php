@@ -1,5 +1,5 @@
 <?php echo form_open_multipart(uri_string(), 'class="streams_form"'); ?>
-<div id="about-form">
+<div id="about-form" class="custom-stream-form">
 	<div id="snapshot">
 		<section class="title">
 			<h4>Snapshot</h4>
@@ -45,7 +45,11 @@
 		</section>
 		<div class="well">
 			<div class="row-fluid">
-				<div class="span4 pull-right">
+				<div class="span9">
+					<p>Some description text here blah blah blah blah blah blah blah blah.</p>
+					<p><a href="#">Not Sure What To Say? See A Sample &raquo;</a></p>
+				</div>
+				<div class="span3">
 					<?php echo $this->load->view('about/partials/field', $fields['our_story_photo']); ?>
 				</div>
 			</div>
@@ -67,7 +71,11 @@
 		</section>
 		<div class="well">
 			<div class="row-fluid">
-				<div class="span4 pull-right">
+				<div class="span9">
+					<p>Some description text here blah blah blah blah blah blah blah blah.</p>
+					<p><a href="#">Not Sure What To Say? See A Sample &raquo;</a></p>
+				</div>
+				<div class="span3">
 					<?php echo $this->load->view('about/partials/field', $fields['our_home_photo']); ?>
 				</div>
 			</div>
@@ -89,7 +97,11 @@
 		</section>
 		<div class="well">
 			<div class="row-fluid">
-				<div class="span4 pull-right">
+				<div class="span9">
+					<p>Some description text here blah blah blah blah blah blah blah blah.</p>
+					<p><a href="#">Not Sure What To Say? See A Sample &raquo;</a></p>
+				</div>
+				<div class="span3">
 					<?php echo $this->load->view('about/partials/field', $fields['parent_1_about_photo']); ?>
 				</div>
 			</div>
@@ -155,7 +167,11 @@
 		</section>
 		<div class="well">
 			<div class="row-fluid">
-				<div class="span4 pull-right">
+				<div class="span9">
+					<p>Some description text here blah blah blah blah blah blah blah blah.</p>
+					<p><a href="#">Not Sure What To Say? See A Sample &raquo;</a></p>
+				</div>
+				<div class="span3">
 					<?php echo $this->load->view('about/partials/field', $fields['parent_2_about_photo']); ?>
 				</div>
 			</div>
@@ -221,7 +237,11 @@
 		</section>
 		<div class="well">
 			<div class="row-fluid">
-				<div class="span4 pull-right">
+				<div class="span9">
+					<p>Some description text here blah blah blah blah blah blah blah blah.</p>
+					<p><a href="#">Not Sure What To Say? See A Sample &raquo;</a></p>
+				</div>
+				<div class="span3">
 					<?php echo $this->load->view('about/partials/field', $fields['our_children_photo']); ?>
 				</div>
 			</div>
@@ -243,7 +263,11 @@
 		</section>
 		<div class="well">
 			<div class="row-fluid">
-				<div class="span4 pull-right">
+				<div class="span9">
+					<p>Some description text here blah blah blah blah blah blah blah blah.</p>
+					<p><a href="#">Not Sure What To Say? See A Sample &raquo;</a></p>
+				</div>
+				<div class="span3">
 					<?php echo $this->load->view('about/partials/field', $fields['our_family_traditions_photo']); ?>
 				</div>
 			</div>
@@ -265,7 +289,11 @@
 		</section>
 		<div class="well">
 			<div class="row-fluid">
-				<div class="span4 pull-right">
+				<div class="span9">
+					<p>Some description text here blah blah blah blah blah blah blah blah.</p>
+					<p><a href="#">Not Sure What To Say? See A Sample &raquo;</a></p>
+				</div>
+				<div class="span3">
 					<?php echo $this->load->view('about/partials/field', $fields['our_extended_family_photo']); ?>
 				</div>
 			</div>
@@ -287,7 +315,11 @@
 		</section>
 		<div class="well">
 			<div class="row-fluid">
-				<div class="span4 pull-right">
+				<div class="span9">
+					<p>Some description text here blah blah blah blah blah blah blah blah.</p>
+					<p><a href="#">Not Sure What To Say? See A Sample &raquo;</a></p>
+				</div>
+				<div class="span3">
 					<?php echo $this->load->view('about/partials/field', $fields['what_led_us_to_adoption_photo']); ?>
 				</div>
 			</div>
@@ -309,7 +341,11 @@
 		</section>
 		<div class="well">
 			<div class="row-fluid">
-				<div class="span4 pull-right">
+				<div class="span9">
+					<p>Some description text here blah blah blah blah blah blah blah blah.</p>
+					<p><a href="#">Not Sure What To Say? See A Sample &raquo;</a></p>
+				</div>
+				<div class="span3">
 					<?php echo $this->load->view('about/partials/field', $fields['what_we_do_for_fun_photo']); ?>
 				</div>
 			</div>

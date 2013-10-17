@@ -115,29 +115,6 @@ jQuery(function($) {
 	 */
 	pyro.init = function() {
 
-		// Select menu for smaller screens
-		$("<select />").appendTo("nav#primary");
-
-		// Create default option "Menu"
-		$("<option />", {
-   			"selected": "selected",
-   			"value"   : "",
-   			"text"    : "Menu"
-		}).appendTo("nav#primary select");
-
-		// Populate dropdown with menu items
-		$("nav#primary a:not(.top-link)").each(function() {
-		 	var el = $(this);
- 			$("<option />", {
-     			"value"   : el.attr("href"),
-     			"text"    : el.text()
- 			}).appendTo("nav#primary select");
-		});
-
-		$("nav#primary select").change(function() {
-  			window.location = $(this).find("option:selected").val();
-		});
-
 		$('.topbar ul li:not(#dashboard-link)').hoverIntent({
 			sensitivity: 7,
 			interval: 75,
@@ -436,6 +413,9 @@ jQuery(function($) {
 
 	pyro.chosen = function()
 	{
+        // We don't want it.
+        return;
+
 		// Non-mobile only
 		if( ! pyro.is_mobile ){
 
