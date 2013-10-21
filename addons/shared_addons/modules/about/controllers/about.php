@@ -42,34 +42,11 @@ class About extends Public_Controller
 		    $data = (array) $about['entries'][0];
 	    }
 
-	    $data['contact'] = $this->getContactStream();
-
         // Build the page
         $this->template
 	        ->title($this->module_details['name'])
             ->build('index', $data);
     }
-
-	/**
-	 * @return array
-	 */
-	protected function getContactStream()
-	{
-		$params = array(
-			'stream' => 'contactus',
-			'namespace' => 'contactus'
-		);
-
-		$contactus = $this->streams->entries->get_entries($params);
-
-		if (count($contactus['entries']))
-		{
-			// Get the one and only entry
-			return $contactus['entries'][0];
-		}
-
-		return array();
-	}
 
 }
 

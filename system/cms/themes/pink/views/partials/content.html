@@ -1,26 +1,8 @@
 <div id="content-wrapper">
     {{ session:messages success="success-box" notice="notice-box" error="error-box" }}
 
-    {{ if page:is_home == true }}
-    <div id="profile-intro">
-        <div class="container-fluid">
-            <div class="row-fluid">
-                <div class="span7 main-pic">
-                    {{ theme:image file="main-profile-pic.jpg"}}
-                </div>
-                <div class="span5 family-info">
-                    <div class="name-callout">
-                        <h2>Hi! We're Liam &amp; Julie.</h2>
-                    </div>
-                    <a class="button button-green" href="#">Send Us A Message</a>
-                    <div class="contact-info">
-                        <span><strong>Call or text:</strong> 1-888-123-4567</span>
-                        <span><strong>Email:</strong> <a href="mailto:LiamAndJulieAdopt@gmail.com">LiamAndJulieAdopt@gmail.com</a></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	{{ theme:partial name="profile-intro" }}
+	{{ if page:is_home == true }}
     <article id="family-intro" class="container-fluid">
         <a class="button button-green video-link hide" href="">Our Adoption Video</a>
         <aside class="video-widget text-center">

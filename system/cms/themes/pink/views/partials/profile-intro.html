@@ -1,0 +1,128 @@
+{{ if page:is_home == true }}
+<div id="profile-intro">
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span7 main-pic">
+				{{ theme:image file="main-profile-pic.jpg"}}
+			</div>
+			<div class="span5 family-info">
+				<div class="name-callout">
+					<h2>Hi! We're Liam &amp; Julie.</h2>
+				</div>
+				<a class="button button-green" href="{{ site_url }}/contact">Send Us A Message</a>
+				<div class="contact-info">
+					<span><strong>Call or text:</strong> {{ contactus:bm_phone_number }}</span>
+					<span><strong>Email:</strong> <a href="mailto:{{ contactus:bm_email_address }}">{{ contactus:bm_email_address }}</a></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{ endif }}
+{{ if url:uri_string == 'about' }}
+<div id="profile-intro" class="sub-page">
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span6 family-info">
+				<h2>About Us</h2>
+				<h3>Liam &amp; Julie Snapshot</h3>
+				<div class="row-fluid">
+					<div class="span7">
+						<h5>Adoption Preferences</h5>
+						<dl id="adoption-preferences" class="clearfix">
+							<dt>Race:</dt>
+							<dd>{{ preferred_race.value }}</dd>
+
+							<dt>Gender:</dt>
+							<dd>{{ preferred_gender.value }}</dd>
+
+							<dt>Age:</dt>
+							<dd>{{ preferred_age.value }}</dd>
+
+							<dt>Special Needs:</dt>
+							<dd>{{ special_needs.value }}</dd>
+
+							<dt>Type of Adoption:</dt>
+							<dd>{{ type_of_adoption.value }}</dd>
+						</dl>
+					</div>
+					<div class="span5">
+						<h5>About Our Family</h5>
+						<dl id="about-family" class="clearfix">
+							<dt>State:</dt>
+							<dd>{{ state.abbr }}</dd>
+
+							<dt>Children:</dt>
+							<dd>None</dd>
+
+							<dt>Pets:</dt>
+							<dd>One dog and one cat</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+			<div class="span6">
+				<div class="contact clearfix">
+					<p>{{ contactus:bm_phone_number }} <span class="bull">&bull;</span> <a href="mailto:{{ contactus:bm_email_address }}">{{ contactus:bm_email_address }}</a></p>
+					{{ theme:partial name="social" }}
+					<a class="button button-pink" href="{{ site_url }}/contact">Send Us A Message</a>
+				</div>
+				<div class="main-pic">
+					<img src="/files/thumb/{{ our_story_photo }}/585/1000" alt=""/>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{ endif }}
+{{ if { url:segments segment="1" } == 'gallery' }}
+<div class="sub-page gallery right clearfix" id="profile-intro">
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span7 family-info">
+				<h2>Our Gallery</h2>
+			</div>
+			<div class="span5 contact clearfix">
+				<p>{{ contactus:bm_phone_number }} <span class="bull">&bull;</span> <a href="mailto:{{ contactus:bm_email_address }}">{{ contactus:bm_email_address }}</a></p>
+				{{ theme:partial name="social" }}
+				<a class="button button-pink" href="{{ site_url }}/contact">Send Us A Message</a>
+				<p class="subtext">A day in our life.... check out our journal entries to see what we’ve been up to.</p>
+			</div>
+		</div>
+	</div>
+</div>
+{{ endif }}
+{{ if { url:segments segment="1" } == 'blog' }}
+<div class="sub-page journal right clearfix" id="profile-intro">
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span7 family-info">
+				<h2>Our Journal</h2>
+			</div>
+			<div class="span5 contact clearfix">
+				<p>{{ contactus:bm_phone_number }} <span class="bull">&bull;</span> <a href="mailto:{{ contactus:bm_email_address }}">{{ contactus:bm_email_address }}</a></p>
+				{{ theme:partial name="social" }}
+				<a class="button button-pink" href="{{ site_url }}/contact">Send Us A Message</a>
+				<p class="subtext">A day in our life.... check out our journal entries to see what we’ve been up to.</p>
+			</div>
+		</div>
+	</div>
+</div>
+{{ endif }}
+{{ if { url:segments segment="1" } == 'contact' }}
+<div class="sub-page journal right clearfix" id="profile-intro">
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span7 family-info">
+				<h2>Contact Us</h2>
+			</div>
+			<div class="span5 contact clearfix">
+				<p>{{ contactus:bm_phone_number }} <span class="bull">&bull;</span> <a href="mailto:{{ contactus:bm_email_address }}">{{ contactus:bm_email_address }}</a></p>
+				{{ theme:partial name="social" }}
+				<a class="button button-pink" href="{{ site_url }}/contact">Send Us A Message</a>
+				<p class="subtext">A day in our life.... check out our journal entries to see what we’ve been up to.</p>
+			</div>
+		</div>
+	</div>
+</div>
+{{ endif }}

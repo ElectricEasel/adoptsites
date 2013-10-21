@@ -9,7 +9,7 @@ class Module_import {
 	{
 		$this->ci =& get_instance();
 		$this->addons = $addons;
-		
+
 		// set this so we can install modules. We'll change it later
 		define('DEFAULT_EMAIL', 'admin@domain.com');
 		define('DEFAULT_LANG', config_item('default_language'));
@@ -29,7 +29,7 @@ class Module_import {
 
 		// Get some basic info
 		$module = $details_class->info();
-		
+
 		// Only install 3rd party modules if defined
 		if( $is_core === false and ( ! isset($module['default_install']) or $module['default_install'] === false ) )
 		{
@@ -125,7 +125,7 @@ class Module_import {
 		$is_core = true;
 
 		// Loop through directories that hold modules
-		foreach (array(APPPATH, ADDONPATH) as $directory)
+		foreach (array(APPPATH, ADDONPATH, SHARED_ADDONPATH) as $directory)
 		{
 			// Are there any modules to install on this path?
 			if ($modules = glob($directory.'modules/*', GLOB_ONLYDIR))

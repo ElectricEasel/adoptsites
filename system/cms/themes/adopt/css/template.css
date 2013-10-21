@@ -9134,6 +9134,9 @@ a.badge:focus {
 .nav-list .content-blog i:before {
   content: "\E236";
 }
+.nav-list .content-comments i:before {
+  content: "\E310";
+}
 .nav-list .content-files i:before {
   content: "\E145";
 }

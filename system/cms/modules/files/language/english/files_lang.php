@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 // General
-$lang['files:files_title']					= 'Files';
+$lang['files:files_title']					= 'Galleries';
 $lang['files:fetching']						= 'Retrieving data...';
 $lang['files:fetch_completed']				= 'Completed';
 $lang['files:save_failed']					= 'Sorry. The changes could not be saved';
@@ -15,7 +15,7 @@ $lang['files:no_permissions']				= 'You do not have sufficient permissions';
 
 // Labels
 $lang['files:activity']						= 'Activity';
-$lang['files:places']						= 'Places';
+$lang['files:places']						= 'Top Level';
 $lang['files:back']							= 'Back';
 $lang['files:forward']						= 'Forward';
 $lang['files:start']						= 'Start Upload';
