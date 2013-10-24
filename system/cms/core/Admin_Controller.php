@@ -189,6 +189,19 @@ class Admin_Controller extends MY_Controller {
 			redirect('admin/login');
 		}
 
+		// HACK: This is to work around permissions for specific addons.
+		// PyroCMS currently only allows addon access globally (yes, no)
+		if ($current_page === 'admin/addons')
+		{
+			$publicAddons = array('themes');
+			$requestedAddon = $this->uri->segment(3);
+
+			if ($requestedAddon && in_array($requestedAddon, $publicAddons))
+			{
+				return true;
+			}
+		}
+
 		// Admins can go straight in
 		if ($this->current_user->group === 'admin')
 		{

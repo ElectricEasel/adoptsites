@@ -22,6 +22,17 @@
 				{
 					$itemClass = str_replace(' ', '-', $class.'-'.strtolower(lang_label($lang_key)));
 
+					// Change the name of the menu item.
+					if ($lang_key === 'Files')
+					{
+						$lang_key = 'Photo Gallery';
+					}
+
+					if ($lang_key === 'Blog')
+					{
+						$lang_key = 'Journal';
+					}
+
 					echo ($uri === 'admin/' . $this->module) ? '<li class="active">' : '<li>';
 					echo '<a href="'.site_url($uri).'" class="'.$itemClass.'"><i></i>'.lang_label($lang_key).'</a></li>';
 

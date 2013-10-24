@@ -1,20 +1,8 @@
-<?php if (isset($buttons) && is_array($buttons)): ?>
+<?php if (isset($buttons) && is_array($buttons)):
 
-	<?php 
-	
-		// What type of buttons?
-		if(isset($button_type) && $button_type == 'primary'):
-			$btn_class = 'btn';
-		elseif(isset($button_type) && $button_type == 'secondary'):
-			$btn_class = 'button';
-		else:
-			// Default to primary
-			$btn_class = 'btn';
-		endif;
-	
-	?>
+	$btn_class = 'btn';
 
-	<?php foreach ($buttons as $key => $button): ?>
+	foreach ($buttons as $key => $button): ?>
 		<?php
 		/**
 		 * @var		$extra	array associative
@@ -25,7 +13,7 @@
 
 		<?php switch ($button) :
 			case 'delete': 
-				if($btn_class == 'btn') $btn_class .= ' red';
+				if($btn_class == 'btn') $btn_class .= ' btn-danger';
 			
 			?>
 				<button type="submit" name="btnAction" value="delete" class="<?php echo $btn_class; ?> confirm">

@@ -9138,9 +9138,6 @@ a.badge:focus {
   content: "\E310";
 }
 .nav-list .content-files i:before {
-  content: "\E145";
-}
-.nav-list .content-galleries i:before {
   content: "\E139";
 }
 .nav-list .content-pages i:before {
@@ -9451,4 +9448,37 @@ section.item {
 }
 .custom-stream-form .span6 .instagram i:before {
   content: "\E033";
+}
+#folders-sidebar {
+  margin-left: 0;
+}
+.context-menu-source {
+  list-style: none;
+}
+#login-body .container {
+  margin-top: 200px;
+  width: 340px;
+}
+#login-body .container #login-logo {
+  background: url(../img/as-logo-reversed.png);
+  width: 268px;
+  height: 80px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+#login-body .container form {
+  background: #f3f3f3;
+  width: 260px;
+  padding: 25px 30px;
+  border: 10px solid #eaeaea;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+#login-body .container form .input-large {
+  padding: 8px 6px;
+  width: 246px;
+}
+#login-body .container form .checkbox.inline {
+  margin: 5px 70px 15px;
 }

@@ -5,9 +5,9 @@
 		<section class="photos" id="{{ slug }}-photos">
 			<div class="container-fluid">
 				<h3>{{ name }}</h3>
-				<div class="row-fluid">
+				<div class="row gallery-container">
 					{{ files }}
-					<div class="span3">
+					<div class="span3 item">
 						<div class="panel">
 							<img alt="{{ alt_attribute }}" src="{{ path }}" />
 							<span>{{ description }}</span>

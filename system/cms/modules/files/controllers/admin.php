@@ -102,7 +102,19 @@ class Admin extends Admin_Controller {
 		$parent_id = $this->input->post('parent');
 		$name = $this->input->post('name');
 
-		$result = Files::create_folder($parent_id, $name);
+		// HACK: Check for existence of parent folder.
+		// If there is one, don't allow the folder to be created.
+		if ($parent_id !== '0')
+		{
+			$result = array(
+				'status' => false,
+				'message' => 'You cannot create nested albums.'
+			);
+		}
+		else
+		{
+			$result = Files::create_folder($parent_id, $name);
+		}
 
 		$result['status'] and Events::trigger('file_folder_created', $result['data']);
 

@@ -571,12 +571,6 @@ jQuery(function($){
 			name = pyro.lang.new_folder_name;
 		}
 
-		// add an editable one to the right pane
-		$('.new-folder').clone()
-			.removeClass('new-folder')
-			.appendTo('.folders-center')
-			.addClass('folder folder-' + new_class);
-
 
 		post_data = { parent : parent, name : name };
 
@@ -584,6 +578,14 @@ jQuery(function($){
 			var results = $.parseJSON(data);
 
 			if (results.status) {
+
+                // HACK: Only create new folders if successful.
+
+                // add an editable one to the right pane
+                $('.new-folder').clone()
+                    .removeClass('new-folder')
+                    .appendTo('.folders-center')
+                    .addClass('folder folder-' + new_class);
 
 				// add the id in so we know who he is
 				$('.folder-' + new_class).attr('data-id', results.data.id);
@@ -615,7 +617,9 @@ jQuery(function($){
 				$('.context-menu-source [data-menu="rename"]').trigger('click');
 
 				$(window).trigger('show-message', results);
-			}
+			} else {
+                alert(results.message);
+            }
 		});
 	 };
 
