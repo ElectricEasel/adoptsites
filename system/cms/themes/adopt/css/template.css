@@ -9190,6 +9190,17 @@ section.item {
 .journal-entries-list li.post {
   margin-bottom: 30px;
 }
+#blog-content-tab ul li.title input {
+  width: 97.5% !important;
+}
+#blog-content-tab ul li.title,
+#blog-content-tab ul li.status {
+  padding: 0;
+  margin-bottom: 5px;
+}
+#blog-content-tab ul li.editor .edit-content {
+  margin-top: 0;
+}
 .streams_form .well {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;

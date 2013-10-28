@@ -23,23 +23,18 @@
 	<div class="form_inputs" id="blog-content-tab">
 		<fieldset>
 			<ul>
-				<li>
+				<li class="title">
 					<label for="title"><?php echo lang('global:title') ?> <span>*</span></label>
 					<div class="input"><?php echo form_input('title', htmlspecialchars_decode($post->title), 'maxlength="100" id="title"') ?></div>
 				</li>
 	
-				<li>
-					<label for="slug"><?php echo lang('global:slug') ?> <span>*</span></label>
-					<div class="input"><?php echo form_input('slug', $post->slug, 'maxlength="100" class="width-20"') ?></div>
-				</li>
-	
-				<li>
+				<li class="status">
 					<label for="status"><?php echo lang('blog:status_label') ?></label>
 					<div class="input"><?php echo form_dropdown('status', array('draft' => lang('blog:draft_label'), 'live' => lang('blog:live_label')), $post->status) ?></div>
 				</li>
 		
 				<li class="editor">
-					<label for="body"><?php echo lang('blog:content_label') ?> <span>*</span></label><br>
+					<label for="body"><?php echo lang('blog:content_label') ?> <span>*</span></label>
 					<div class="input small-side">
 						<?php echo form_dropdown('type', array(
 							'html' => 'html',
