@@ -77,6 +77,7 @@ require dirname(__FILE__).'/Base.php';
  * @property CI_Jquery $jquery
  * @property CI_Utf8 $utf8
  * @property CI_Security $security
+ * @property Streams  $streams
  */
 class MX_Controller
 {

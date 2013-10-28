@@ -164,6 +164,7 @@ class Create extends Sites_Controller
 			{
 				// Try to create the site
 				$message = $this->sites_m->create_site($this->input->post());
+				$this->changeDefaultPyroSetup();
 
 				if ($message === true)
 				{
@@ -208,6 +209,23 @@ class Create extends Sites_Controller
 			->title(lang('site:sites'), lang('site:create_site'))
 			->set('description', lang('site:create_site_desc'))
 			->build('form', $data);
+	}
+
+	private function changeDefaultPyroSetup()
+	{
+		// Remove the blog intro field.
+		$this->streams->fields->delete_field('intro', 'blogs');
+
+		// Add the blog photo field.
+		$photo = array(
+			'name'      => 'Photo',
+			'slug'      => 'photo',
+			'namespace' => 'blogs',
+			'assign'    => 'blog',
+			'type'      => 'file_select',
+			'required'  => false
+		);
+		$this->streams->fields->add_field($photo);
 	}
 
 	public function ajax($method)
